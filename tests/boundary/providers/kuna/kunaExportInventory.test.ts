@@ -8,19 +8,21 @@ const it = test.skipIf(process.platform === "win32");
 const inventoriesOf = async (kuna: string) =>
   (await fakeKunaCalls(kuna)).filter(({ argv }) => argv[0] === "functions");
 
-it("lists a cold target from the export's inventory without a second run", async () => {
+it("resolves a cold request from the export's inventory without a second run", async () => {
   const { kuna, open } = await session("rea-kuna-export-inventory-", {
     project: "hang",
     inventoryDelayMs: 200,
   });
   const client = open();
   try {
+    // Pseudocode starts the export, then resolves its name from the inventory.
     expect(
-      (await run(client, "search_procedures", { pattern: "parse" })).result,
-    ).toEqual([{ address: "0x1040", value: "parse" }]);
+      (await run(client, "procedure_pseudo_code", { procedure: "parse" }))
+        .rawResult,
+    ).toMatchObject({ source: { kind: "single-function" } });
     expect(
-      (await run(client, "procedure_address", { procedure: "main" })).result,
-    ).toBe("0x1000");
+      (await run(client, "search_procedures", { pattern: "main" })).result,
+    ).toEqual([{ address: "0x1000", value: "main" }]);
     // The export goes on to decompile; its inventory answered both requests.
     await expect.poll(() => exportsOf(kuna)).toHaveLength(1);
     expect(await inventoriesOf(kuna)).toHaveLength(1);
@@ -36,11 +38,12 @@ it("gives a session that joins a running export the inventory it already listed"
   const first = open();
   const second = open();
   try {
-    await run(first, "list_procedures");
+    await run(first, "procedure_pseudo_code", { procedure: "main" });
     await expect.poll(() => exportsOf(kuna)).toHaveLength(1);
     expect(
-      (await run(second, "procedure_address", { procedure: "parse" })).result,
-    ).toBe("0x1040");
+      (await run(second, "procedure_pseudo_code", { procedure: "parse" }))
+        .rawResult,
+    ).toMatchObject({ source: { kind: "single-function" } });
     expect(await inventoriesOf(kuna)).toHaveLength(1);
   } finally {
     expect(await second.close()).toEqual({ ok: true, value: null });
@@ -54,7 +57,9 @@ it("runs its own inventory when the export ends before listing", async () => {
   });
   const client = open();
   try {
-    expect(await client.execute("list_procedures", {})).toMatchObject({
+    expect(
+      await client.execute("procedure_pseudo_code", { procedure: "main" }),
+    ).toMatchObject({
       ok: false,
       error: {
         userMessage: expect.stringContaining(
