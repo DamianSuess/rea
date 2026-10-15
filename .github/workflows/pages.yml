@@ -15,7 +15,8 @@ jobs:
       - uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9
         with:
           dotnet-version: '10.0.x'
-      - run: dotnet build dotnet/tools/Rea.Automation/Rea.Automation.csproj --configuration Release --nologo
+      - run: dotnet build Rea.slnx --configuration Release --nologo
+      - run: dotnet exec scripts/bin/Release/net10.0/Rea.Validation.dll repository .
       - run: dotnet exec dotnet/tools/Rea.Automation/bin/Release/net10.0/Rea.Automation.dll docs . dotnet/artifacts/docs-site
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:

@@ -1,7 +1,7 @@
 name: Website documentation check
 on:
   pull_request:
-    paths: ['docs/**', 'dotnet/tools/Rea.Automation/**', '.github/workflows/pages.yml', '.github/workflows/website-check.yml']
+    paths: ['docs/**', 'scripts/**', '.agents/**', 'README.md', 'dotnet/**', '.github/workflows/pages.yml', '.github/workflows/website-check.yml']
   workflow_dispatch:
 permissions:
   contents: read

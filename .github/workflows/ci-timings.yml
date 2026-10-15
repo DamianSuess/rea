@@ -14,7 +14,7 @@ jobs:
         with:
           dotnet-version: '10.0.x'
       - run: dotnet build Rea.slnx --configuration Release --nologo
-      - run: dotnet exec dotnet/tests/Rea.Tests/bin/Release/net10.0/Rea.Tests.dll --report dotnet/artifacts/reports/test-results.json
+      - run: dotnet exec scripts/bin/Release/net10.0/Rea.Validation.dll test-hygiene . dotnet/artifacts/reports/test-results.json
       - run: dotnet exec dotnet/tools/Rea.Automation/bin/Release/net10.0/Rea.Automation.dll verify-report dotnet/artifacts/reports/test-results.json
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()

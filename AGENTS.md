@@ -19,8 +19,11 @@ Use the SDK selected by `global.json`. From the repository root:
 - `dotnet exec dotnet/tests/Rea.Tests/bin/Release/net10.0/Rea.Tests.dll --verify-packages dotnet/artifacts/packages`
 
 The tests are a dependency-free executable. `dotnet test` does not execute these
-assertions. Add new tests to the runner's explicit case inventory. Repository
-policy tests reject non-C# source and obsolete build manifests.
+assertions. Test suites use one `*Tests.cs` file per suite and a public static
+`IEnumerable<Case> Cases()` method. Discovery is automatic and checks the source
+inventory; only PackageTests takes a directory argument. See scripts/README.md
+for C# architecture, documentation/skill, cleanup and installed-package gates.
+Repository policy tests reject non-C# source and obsolete build manifests.
 
 ## Product and authority
 

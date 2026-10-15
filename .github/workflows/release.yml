@@ -22,10 +22,12 @@ jobs:
         with:
           dotnet-version: '10.0.x'
       - run: dotnet build Rea.slnx --configuration Release --nologo
-      - run: dotnet exec dotnet/tests/Rea.Tests/bin/Release/net10.0/Rea.Tests.dll --report dotnet/artifacts/reports/test-results.json
+      - run: dotnet exec scripts/bin/Release/net10.0/Rea.Validation.dll repository .
+      - run: dotnet exec scripts/bin/Release/net10.0/Rea.Validation.dll test-hygiene . dotnet/artifacts/reports/test-results.json
       - run: dotnet exec dotnet/tools/Rea.Automation/bin/Release/net10.0/Rea.Automation.dll verify-report dotnet/artifacts/reports/test-results.json
       - run: dotnet pack dotnet/src/Rea.Cli --configuration Release --no-build --output dotnet/artifacts/packages
       - run: dotnet exec dotnet/tests/Rea.Tests/bin/Release/net10.0/Rea.Tests.dll --verify-packages dotnet/artifacts/packages
+      - run: dotnet exec scripts/bin/Release/net10.0/Rea.Validation.dll package . dotnet/artifacts/packages
       - name: Qualify exact package and source
         env:
           REA_PACKAGE_DIRECTORY: dotnet/artifacts/packages

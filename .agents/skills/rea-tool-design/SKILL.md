@@ -3,7 +3,7 @@ name: rea-tool-design
 description: Design or change REA investigation tools, CLI/MCP contracts, provider capabilities, and Evidence semantics.
 ---
 
-> **C# compatibility status:** Restored from `ef250b14442ad99458ef7ba1e59b78c809238675`. The text below records the former implementation. Follow [the current C# guide](../../../docs/dotnet-workflows.md) for executable commands. Historical npm, MCP, provider and model-trial examples are not supported by the current C# runtime. Do not treat historical verification as current verification.
+> **C# compatibility status:** Restored from `ef250b14442ad99458ef7ba1e59b78c809238675`. The text below records the former implementation. Follow [the current C# guide](references/current-csharp.md) for executable commands. Historical npm, MCP, provider and model-trial examples are not supported by the current C# runtime. Do not treat historical verification as current verification.
 
 ## Active C# checkout instructions
 
