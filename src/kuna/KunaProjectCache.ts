@@ -448,10 +448,7 @@ export class KunaProjectCache {
       onStatus === undefined
         ? undefined
         : (status: KunaExportStatus) => onStatus(status);
-    if (listener !== undefined) {
-      entry.listeners.add(listener);
-      if (entry.status !== undefined) listener(entry.status);
-    }
+    if (listener !== undefined) entry.listeners.add(listener);
     return new Promise((resolve) => {
       let settled = false;
       const leave = () => {
@@ -473,6 +470,9 @@ export class KunaProjectCache {
         leave();
         resolve(result);
       });
+      // Replay only once cancellation is registered, so a listener may abort.
+      if (listener !== undefined && entry.status !== undefined)
+        listener(entry.status);
     });
   }
 
