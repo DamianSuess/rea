@@ -1,0 +1,1330 @@
+{
+  "source_commit": "ef250b14442ad99458ef7ba1e59b78c809238675",
+  "entries": [
+    {
+      "original": ".agents/skills/rea-changelog-update/SKILL.md",
+      "current": ".agents/skills/rea-changelog-update/SKILL.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".agents/skills/rea-ci-tests-audit/SKILL.md",
+      "current": ".agents/skills/rea-ci-tests-audit/SKILL.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".agents/skills/rea-ci-tests-audit/agents/openai.yaml",
+      "current": ".agents/skills/rea-ci-tests-audit/agents/openai.yaml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".agents/skills/rea-ci-tests-audit/references/measurement-and-ci.md",
+      "current": ".agents/skills/rea-ci-tests-audit/references/measurement-and-ci.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".agents/skills/rea-tool-design/SKILL.md",
+      "current": ".agents/skills/rea-tool-design/SKILL.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".agents/skills/reverse-engineer-anything/SKILL.md",
+      "current": ".agents/skills/reverse-engineer-anything/SKILL.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".agents/skills/reverse-engineer-anything/references/android-applications.md",
+      "current": ".agents/skills/reverse-engineer-anything/references/android-applications.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".agents/skills/reverse-engineer-anything/references/connection-and-recovery.md",
+      "current": ".agents/skills/reverse-engineer-anything/references/connection-and-recovery.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".agents/skills/reverse-engineer-anything/references/evidence-workflows.md",
+      "current": ".agents/skills/reverse-engineer-anything/references/evidence-workflows.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".agents/skills/reverse-engineer-anything/references/javascript-applications.md",
+      "current": ".agents/skills/reverse-engineer-anything/references/javascript-applications.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".agents/skills/reverse-engineer-anything/references/native-and-artifacts.md",
+      "current": ".agents/skills/reverse-engineer-anything/references/native-and-artifacts.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".agents/skills/reverse-engineer-anything/references/runtime-observation.md",
+      "current": ".agents/skills/reverse-engineer-anything/references/runtime-observation.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "current": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/ISSUE_TEMPLATE/config.yml",
+      "current": ".github/ISSUE_TEMPLATE/config.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/ISSUE_TEMPLATE/design_discussion.yml",
+      "current": ".github/ISSUE_TEMPLATE/design_discussion.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/ISSUE_TEMPLATE/documentation.yml",
+      "current": ".github/ISSUE_TEMPLATE/documentation.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "current": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/actionlint.yaml",
+      "current": ".github/actionlint.yaml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/actions/npm-cache/action.yml",
+      "current": ".github/actions/npm-cache/action.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/actions/portable-build-cache/action.yml",
+      "current": ".github/actions/portable-build-cache/action.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/actions/prepare-release-package/action.yml",
+      "current": ".github/actions/prepare-release-package/action.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/actions/publish-mcp/action.yml",
+      "current": ".github/actions/publish-mcp/action.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/actions/publish-mcp/registry-state.d.mts",
+      "current": "dotnet/tools/Rea.Automation/RegistryState.cs",
+      "status": "ported exact-version lookup to C#; MCP publication unavailable"
+    },
+    {
+      "original": ".github/actions/publish-mcp/registry-state.mjs",
+      "current": "dotnet/tools/Rea.Automation/RegistryState.cs",
+      "status": "ported exact-version lookup to C#; MCP publication unavailable"
+    },
+    {
+      "original": ".github/pull_request_template.md",
+      "current": ".github/pull_request_template.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/ci-full-pr.yml",
+      "current": ".github/workflows/ci-full-pr.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/ci-timings.yml",
+      "current": ".github/workflows/ci-timings.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/ci.yml",
+      "current": ".github/workflows/ci.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/dotnet.yml",
+      "current": ".github/workflows/dotnet.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/mutation.yml",
+      "current": ".github/workflows/mutation.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/nativeaot-fixtures.yml",
+      "current": ".github/workflows/nativeaot-fixtures.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/pages.yml",
+      "current": ".github/workflows/pages.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/pr-readiness.yml",
+      "current": ".github/workflows/pr-readiness.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/pr-title.yml",
+      "current": ".github/workflows/pr-title.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/real-binary-layout.yml",
+      "current": ".github/workflows/real-binary-layout.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/real-browser.yml",
+      "current": ".github/workflows/real-browser.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/real-cutter.yml",
+      "current": ".github/workflows/real-cutter.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/real-evm-interface.yml",
+      "current": ".github/workflows/real-evm-interface.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/real-ghidra-windows.yml",
+      "current": ".github/workflows/real-ghidra-windows.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/real-go-binary.yml",
+      "current": ".github/workflows/real-go-binary.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/real-hopper-linux.yml",
+      "current": ".github/workflows/real-hopper-linux.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/real-hopper.yml",
+      "current": ".github/workflows/real-hopper.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/real-javascript-recovery.yml",
+      "current": ".github/workflows/real-javascript-recovery.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/real-packet-capture.yml",
+      "current": ".github/workflows/real-packet-capture.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/real-recorded-crash.yml",
+      "current": ".github/workflows/real-recorded-crash.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/real-signal-recording.yml",
+      "current": ".github/workflows/real-signal-recording.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/real-termux.yml",
+      "current": ".github/workflows/real-termux.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/real-web-network-captures.yml",
+      "current": ".github/workflows/real-web-network-captures.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/real-web-runtime.yml",
+      "current": ".github/workflows/real-web-runtime.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/real-web-source-map.yml",
+      "current": ".github/workflows/real-web-source-map.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/release-recovery.yml",
+      "current": ".github/workflows/release-recovery.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/release.yml",
+      "current": ".github/workflows/release.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/sqlite-runtime.yml",
+      "current": ".github/workflows/sqlite-runtime.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/website-check.yml",
+      "current": ".github/workflows/website-check.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": ".github/workflows/website-pages.yml",
+      "current": ".github/workflows/website-pages.yml",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "bridge/android/ReaJadxBridge.java",
+      "current": "bridge/android/ReaJadxBridge.java",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/cutter/rea_bridge.py",
+      "current": "bridge/cutter/rea_bridge.py",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/ghidra/ReaGhidraAnalysisOptions.java",
+      "current": "bridge/ghidra/ReaGhidraAnalysisOptions.java",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/ghidra/ReaGhidraApplySeeds.java",
+      "current": "bridge/ghidra/ReaGhidraApplySeeds.java",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/ghidra/ReaGhidraBridge.java",
+      "current": "bridge/ghidra/ReaGhidraBridge.java",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/ghidra/ReaGhidraBundleActivator.java",
+      "current": "bridge/ghidra/ReaGhidraBundleActivator.java",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/ghidra/ReaGhidraExtensions.java",
+      "current": "bridge/ghidra/ReaGhidraExtensions.java",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/ghidra/ReaGhidraMipsSoftFloat.java",
+      "current": "bridge/ghidra/ReaGhidraMipsSoftFloat.java",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/ghidra/ReaGhidraNoReturnFix.java",
+      "current": "bridge/ghidra/ReaGhidraNoReturnFix.java",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/ghidra/ReaGhidraPrepareCom.java",
+      "current": "bridge/ghidra/ReaGhidraPrepareCom.java",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/ghidra/ReaGhidraPrepareRaw.java",
+      "current": "bridge/ghidra/ReaGhidraPrepareRaw.java",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/hopper_bridge.py",
+      "current": "bridge/hopper_bridge.py",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/mitmproxy/capture.py",
+      "current": "bridge/mitmproxy/capture.py",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/mitmproxy/test_capture.py",
+      "current": "bridge/mitmproxy/test_capture.py",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/native/NativeUIChildren.swift",
+      "current": "bridge/native/NativeUIChildren.swift",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/native/ReaNativeUI.swift",
+      "current": "bridge/native/ReaNativeUI.swift",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/native/rea_lldb_tracer.py",
+      "current": "bridge/native/rea_lldb_tracer.py",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/native/test_rea_lldb_tracer.py",
+      "current": "bridge/native/test_rea_lldb_tracer.py",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/nativeaot/NativeAotDirectory.java",
+      "current": "bridge/nativeaot/NativeAotDirectory.java",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/nativeaot/NativeAotExtension.java",
+      "current": "bridge/nativeaot/NativeAotExtension.java",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/nativeaot/NativeAotMethodConventions.java",
+      "current": "bridge/nativeaot/NativeAotMethodConventions.java",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/nativeaot/NativeAotTypeMetadata.java",
+      "current": "bridge/nativeaot/NativeAotTypeMetadata.java",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/process/ProcessRunTokenReader.swift",
+      "current": "bridge/process/ProcessRunTokenReader.swift",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/process/ProcessRunTokenReaderMain.swift",
+      "current": "bridge/process/ProcessRunTokenReaderMain.swift",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/pwndbg/core_context.py",
+      "current": "bridge/pwndbg/core_context.py",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/pwndbg/launch.py",
+      "current": "bridge/pwndbg/launch.py",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/pwndbg/launch_impl.py",
+      "current": "bridge/pwndbg/launch_impl.py",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/pwntools/decoder_runtime.py",
+      "current": "bridge/pwntools/decoder_runtime.py",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/pwntools/layout.py",
+      "current": "bridge/pwntools/layout.py",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/pwntools/layout_impl.py",
+      "current": "bridge/pwntools/layout_impl.py",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/pwntools/recorded_crash.py",
+      "current": "bridge/pwntools/recorded_crash.py",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "bridge/pwntools/recorded_crash_impl.py",
+      "current": "bridge/pwntools/recorded_crash_impl.py",
+      "status": "engine-required source restored unchanged; approved language exception; provider unverified"
+    },
+    {
+      "original": "docs/.vitepress/config.ts",
+      "current": "docs/site.json",
+      "status": "C# static documentation builder replaces VitePress; rendering limitations documented"
+    },
+    {
+      "original": "docs/adb-device-analysis.md",
+      "current": "docs/adb-device-analysis.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/android-analysis.md",
+      "current": "docs/android-analysis.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/apktool-resource-analysis.md",
+      "current": "docs/apktool-resource-analysis.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/apple-application-analysis.md",
+      "current": "docs/apple-application-analysis.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/architecture.mermaid",
+      "current": "docs/architecture.mermaid",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/assets/discord.svg",
+      "current": "docs/assets/discord.svg",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/assets/rea-hopper-analysis.png",
+      "current": "docs/assets/rea-hopper-analysis.png",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/assets/rea-showcases.png",
+      "current": "docs/assets/rea-showcases.png",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/binary-diagnostics.md",
+      "current": "docs/binary-diagnostics.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/browser-observation.md",
+      "current": "docs/browser-observation.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/browser-scenario-contract.md",
+      "current": "docs/browser-scenario-contract.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/cli.md",
+      "current": "docs/cli.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/client-configuration.md",
+      "current": "docs/client-configuration.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/client-verification.md",
+      "current": "docs/client-verification.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/electron-fuses.md",
+      "current": "docs/electron-fuses.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/electron-observation.md",
+      "current": "docs/electron-observation.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/error-contract.schema.json",
+      "current": "docs/error-contract.schema.json",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/evm-bytecode.md",
+      "current": "docs/evm-bytecode.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/firmware-analysis.md",
+      "current": "docs/firmware-analysis.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/flutter-analysis.md",
+      "current": "docs/flutter-analysis.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/frida-instrumentation.md",
+      "current": "docs/frida-instrumentation.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/ghidra-dos.md",
+      "current": "docs/ghidra-dos.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/ghidra-mips.md",
+      "current": "docs/ghidra-mips.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/ghidra-nativeaot.md",
+      "current": "docs/ghidra-nativeaot.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/ghidra-ppc.md",
+      "current": "docs/ghidra-ppc.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/ghidra-provider.md",
+      "current": "docs/ghidra-provider.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/ghidra-psp.md",
+      "current": "docs/ghidra-psp.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/ghidra-riscv.md",
+      "current": "docs/ghidra-riscv.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/go-binaries.md",
+      "current": "docs/go-binaries.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/harmony-analysis.md",
+      "current": "docs/harmony-analysis.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/http3-capture-lab.md",
+      "current": "docs/http3-capture-lab.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/ida-provider.md",
+      "current": "docs/ida-provider.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/index.md",
+      "current": "docs/index.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/installation.md",
+      "current": "docs/installation.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/javascript-application-graph.md",
+      "current": "docs/javascript-application-graph.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/javascript-application-workflows.md",
+      "current": "docs/javascript-application-workflows.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/javascript-artifact-reconstruction.md",
+      "current": "docs/javascript-artifact-reconstruction.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/javascript-recovery.md",
+      "current": "docs/javascript-recovery.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/javascript-runtime-observation.md",
+      "current": "docs/javascript-runtime-observation.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/javascript-runtime-reconciliation.md",
+      "current": "docs/javascript-runtime-reconciliation.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/jeb-analysis.md",
+      "current": "docs/jeb-analysis.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/kuna-provider.md",
+      "current": "docs/kuna-provider.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/managed-code-analysis.md",
+      "current": "docs/managed-code-analysis.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/mcp-contracts.md",
+      "current": "docs/mcp-contracts.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/mcp-prompts.md",
+      "current": "docs/mcp-prompts.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/migration-6.2.md",
+      "current": "docs/migration-6.2.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/native-investigation.md",
+      "current": "docs/native-investigation.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/packet-captures.md",
+      "current": "docs/packet-captures.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/pcap-analysis.md",
+      "current": "docs/pcap-analysis.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/process-capture.md",
+      "current": "docs/process-capture.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/raw-binary.md",
+      "current": "docs/raw-binary.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/readme/README_ar.md",
+      "current": "docs/readme/README_ar.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/readme/README_de.md",
+      "current": "docs/readme/README_de.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/readme/README_el.md",
+      "current": "docs/readme/README_el.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/readme/README_es.md",
+      "current": "docs/readme/README_es.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/readme/README_fa.md",
+      "current": "docs/readme/README_fa.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/readme/README_fr.md",
+      "current": "docs/readme/README_fr.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/readme/README_id.md",
+      "current": "docs/readme/README_id.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/readme/README_it.md",
+      "current": "docs/readme/README_it.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/readme/README_ja.md",
+      "current": "docs/readme/README_ja.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/readme/README_ko.md",
+      "current": "docs/readme/README_ko.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/readme/README_pl.md",
+      "current": "docs/readme/README_pl.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/readme/README_pt-BR.md",
+      "current": "docs/readme/README_pt-BR.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/readme/README_ru.md",
+      "current": "docs/readme/README_ru.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/readme/README_th.md",
+      "current": "docs/readme/README_th.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/readme/README_tr.md",
+      "current": "docs/readme/README_tr.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/readme/README_uk.md",
+      "current": "docs/readme/README_uk.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/readme/README_vi.md",
+      "current": "docs/readme/README_vi.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/readme/README_zh-TW.md",
+      "current": "docs/readme/README_zh-TW.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/readme/README_zh.md",
+      "current": "docs/readme/README_zh.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/reconstruction-coverage.md",
+      "current": "docs/reconstruction-coverage.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/reconstruction-obligation-ledgers.md",
+      "current": "docs/reconstruction-obligation-ledgers.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/reconstruction-readiness.md",
+      "current": "docs/reconstruction-readiness.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/recorded-crashes.md",
+      "current": "docs/recorded-crashes.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/releases/6.4.0.contributions.json",
+      "current": "docs/releases/6.4.0.contributions.json",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/releases/6.5.0.contributions.json",
+      "current": "docs/releases/6.5.0.contributions.json",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/releasing.md",
+      "current": "docs/releasing.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/reverse-engineering-tools.md",
+      "current": "docs/reverse-engineering-tools.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/roadmap.md",
+      "current": "docs/roadmap.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/rust-binaries.md",
+      "current": "docs/rust-binaries.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/signal-recordings.md",
+      "current": "docs/signal-recordings.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/specs/2356-wasm-interface-comparison/plan.md",
+      "current": "docs/specs/2356-wasm-interface-comparison/plan.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/specs/2356-wasm-interface-comparison/spec.md",
+      "current": "docs/specs/2356-wasm-interface-comparison/spec.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/specs/2356-wasm-interface-comparison/tasks.md",
+      "current": "docs/specs/2356-wasm-interface-comparison/tasks.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/specs/2356-wasm-interface-comparison/verification.md",
+      "current": "docs/specs/2356-wasm-interface-comparison/verification.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/specs/solidity/cbor-metadata/plan.md",
+      "current": "docs/specs/solidity/cbor-metadata/plan.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/specs/solidity/cbor-metadata/spec.md",
+      "current": "docs/specs/solidity/cbor-metadata/spec.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/specs/solidity/cbor-metadata/tasks.md",
+      "current": "docs/specs/solidity/cbor-metadata/tasks.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/specs/solidity/cbor-metadata/verification.md",
+      "current": "docs/specs/solidity/cbor-metadata/verification.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/sqlite-databases.md",
+      "current": "docs/sqlite-databases.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/testing.md",
+      "current": "docs/testing.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/tool-design.md",
+      "current": "docs/tool-design.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/user-visible-errors.csv",
+      "current": "docs/user-visible-errors.csv",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/wasm-artifacts.md",
+      "current": "docs/wasm-artifacts.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/web-network-captures.md",
+      "current": "docs/web-network-captures.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/web-runtime.md",
+      "current": "docs/web-runtime.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/web-source-location.md",
+      "current": "docs/web-source-location.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/website-module-trace.md",
+      "current": "docs/website-module-trace.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/website-script-export.md",
+      "current": "docs/website-script-export.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "docs/windows-ghidra-p0.md",
+      "current": "docs/windows-ghidra-p0.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/README.md",
+      "current": "experiments/analysis-efficiency/README.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/agent-trial.py",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/android-package-summary.md",
+      "current": "experiments/analysis-efficiency/android-package-summary.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/codex_context.py",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/compare.mjs",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/corpus.json",
+      "current": "experiments/analysis-efficiency/corpus.json",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/evm-descriptor.md",
+      "current": "experiments/analysis-efficiency/evm-descriptor.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/evm-interface-summary.md",
+      "current": "experiments/analysis-efficiency/evm-interface-summary.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/evm-lifecycle.md",
+      "current": "experiments/analysis-efficiency/evm-lifecycle.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/flutter-aot-summary.md",
+      "current": "experiments/analysis-efficiency/flutter-aot-summary.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/ida-native-windows.md",
+      "current": "experiments/analysis-efficiency/ida-native-windows.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/latest-main-audit.md",
+      "current": "experiments/analysis-efficiency/latest-main-audit.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/managed-artifact-summary.md",
+      "current": "experiments/analysis-efficiency/managed-artifact-summary.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/measure.mjs",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/model-context.md",
+      "current": "experiments/analysis-efficiency/model-context.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/native-entry-views.md",
+      "current": "experiments/analysis-efficiency/native-entry-views.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/native-entry.mjs",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/packet-entry.mjs",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/packet-field-workflows.md",
+      "current": "experiments/analysis-efficiency/packet-field-workflows.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/packet-model-prompt.mjs",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/packet-oracle.py",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/pcap-small-captures.md",
+      "current": "experiments/analysis-efficiency/pcap-small-captures.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/preset-lifecycle.md",
+      "current": "experiments/analysis-efficiency/preset-lifecycle.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/probe-analyzers.mjs",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/probe-browser.mjs",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/process-trace-validation.md",
+      "current": "experiments/analysis-efficiency/process-trace-validation.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/provider-environment.json",
+      "current": "experiments/analysis-efficiency/provider-environment.json",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/questions/android.txt",
+      "current": "experiments/analysis-efficiency/questions/android.txt",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/questions/browser.txt",
+      "current": "experiments/analysis-efficiency/questions/browser.txt",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/questions/electron-inventory.txt",
+      "current": "experiments/analysis-efficiency/questions/electron-inventory.txt",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/questions/evm-uniswap.txt",
+      "current": "experiments/analysis-efficiency/questions/evm-uniswap.txt",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/questions/evm.txt",
+      "current": "experiments/analysis-efficiency/questions/evm.txt",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/questions/firmware.txt",
+      "current": "experiments/analysis-efficiency/questions/firmware.txt",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/questions/flutter-aot.txt",
+      "current": "experiments/analysis-efficiency/questions/flutter-aot.txt",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/questions/javascript-selected.txt",
+      "current": "experiments/analysis-efficiency/questions/javascript-selected.txt",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/questions/managed-nonempty.txt",
+      "current": "experiments/analysis-efficiency/questions/managed-nonempty.txt",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/questions/managed.txt",
+      "current": "experiments/analysis-efficiency/questions/managed.txt",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/questions/native-dos.txt",
+      "current": "experiments/analysis-efficiency/questions/native-dos.txt",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/questions/native-pe.txt",
+      "current": "experiments/analysis-efficiency/questions/native-pe.txt",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/questions/native.txt",
+      "current": "experiments/analysis-efficiency/questions/native.txt",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/questions/packet-postgres.txt",
+      "current": "experiments/analysis-efficiency/questions/packet-postgres.txt",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/questions/pcap-http.txt",
+      "current": "experiments/analysis-efficiency/questions/pcap-http.txt",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/questions/sqlite-qgis.txt",
+      "current": "experiments/analysis-efficiency/questions/sqlite-qgis.txt",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/questions/wasm-interface.txt",
+      "current": "experiments/analysis-efficiency/questions/wasm-interface.txt",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/questions/wasm.txt",
+      "current": "experiments/analysis-efficiency/questions/wasm.txt",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/resource-counters.md",
+      "current": "experiments/analysis-efficiency/resource-counters.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/resource-run.py",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/resource_payload.py",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/review-model.py",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/review-packet.mjs",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/review-saz.mjs",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/review-signal.mjs",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/saz-entry.mjs",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/saz-model-prompt.mjs",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/saz-oracle.py",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/saz-selection-workflows.md",
+      "current": "experiments/analysis-efficiency/saz-selection-workflows.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/signal-entry.mjs",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/signal-model-prompt.mjs",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/signal-oracle.py",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/signal-selection-workflows.md",
+      "current": "experiments/analysis-efficiency/signal-selection-workflows.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/sqlite-existing-controls.md",
+      "current": "experiments/analysis-efficiency/sqlite-existing-controls.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/test_codex_context.py",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/test_packet_oracle.py",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/test_resource_payload.py",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/test_saz_oracle.py",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/test_signal_oracle.py",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/unknown-pagination.md",
+      "current": "experiments/analysis-efficiency/unknown-pagination.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/verify-evm-lifecycle.mjs",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/verify-evm-retention.mjs",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/verify-evm-template.mjs",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/verify-migration.mjs",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/verify-preset-lifecycle.mjs",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/verify-preset-snapshot.mjs",
+      "current": "experiments/analysis-efficiency/Program.cs",
+      "status": "current CLI measure/compare ported; old provider/model-specific trial/oracle behavior unavailable"
+    },
+    {
+      "original": "experiments/analysis-efficiency/wasm-first-call.md",
+      "current": "experiments/analysis-efficiency/wasm-first-call.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/windows-empty-profile.md",
+      "current": "experiments/analysis-efficiency/windows-empty-profile.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/windows-posix-reconciliation.md",
+      "current": "experiments/analysis-efficiency/windows-posix-reconciliation.md",
+      "status": "restored and adapted/documented"
+    },
+    {
+      "original": "experiments/analysis-efficiency/windows-runtime-retry.md",
+      "current": "experiments/analysis-efficiency/windows-runtime-retry.md",
+      "status": "restored and adapted/documented"
+    }
+  ]
+}

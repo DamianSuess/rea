@@ -1,0 +1,38 @@
+{
+  "source_commit": "ef250b14442ad99458ef7ba1e59b78c809238675",
+  "active": [
+    "ci.yml",
+    "dotnet.yml",
+    "pr-title.yml",
+    "pr-readiness.yml",
+    "pages.yml",
+    "website-check.yml",
+    "website-pages.yml",
+    "release.yml",
+    "ci-full-pr.yml",
+    "ci-timings.yml"
+  ],
+  "unavailable_manual_lanes": [
+    "mutation.yml",
+    "nativeaot-fixtures.yml",
+    "real-binary-layout.yml",
+    "real-browser.yml",
+    "real-cutter.yml",
+    "real-evm-interface.yml",
+    "real-ghidra-windows.yml",
+    "real-go-binary.yml",
+    "real-hopper-linux.yml",
+    "real-hopper.yml",
+    "real-javascript-recovery.yml",
+    "real-packet-capture.yml",
+    "real-recorded-crash.yml",
+    "real-signal-recording.yml",
+    "real-termux.yml",
+    "real-web-network-captures.yml",
+    "real-web-runtime.yml",
+    "real-web-source-map.yml",
+    "release-recovery.yml",
+    "sqlite-runtime.yml"
+  ],
+  "publication": "Release prepares qualified .NET artifacts. npm/MCP publication and release recovery remain unavailable; no publishing is performed by qualification."
+}

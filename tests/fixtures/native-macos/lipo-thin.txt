@@ -1,1 +1,0 @@
-Non-fat file: fixture is architecture: arm64

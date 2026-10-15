@@ -1,0 +1,186 @@
+{
+  "source_commit": "ef250b14442ad99458ef7ba1e59b78c809238675",
+  "entries": [
+    {
+      "original_path": "experiments/analysis-efficiency/agent-trial.py",
+      "source_sha256": "6785ae9f0160fd314a0c5f90843a6a97ee67cba4523d53ae46897a46aeb4abf4",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/codex_context.py",
+      "source_sha256": "79c5ec253c836f67d05e4da19f80283c1d40c292dcbb78f3f984095031bcc52c",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/compare.mjs",
+      "source_sha256": "b0d721f5662c6b76355437daed4f6057066bf85bd451155f583cd46f7fc7f7ab",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/measure.mjs",
+      "source_sha256": "4780698e1e3d526292e923863f055a146f78c2de49809a5ea24562ca9f9c67d3",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/native-entry.mjs",
+      "source_sha256": "6f2f43e06cb3afc535d540bf49877f4a1965f608a50914ee403f20f2f38f7dec",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/packet-entry.mjs",
+      "source_sha256": "78247e73de6a08cc55931006c8c3f3a68272f4ee09f51fe225a207b5c4995793",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/packet-model-prompt.mjs",
+      "source_sha256": "2667836c7552c8648a7c4b0c350c9832c9cc36179eccd145da2a6ddefc379138",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/packet-oracle.py",
+      "source_sha256": "7e7cdea207b7a02127fc4275b7f185cf6dca2335cad5d135ffd0207570677630",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/probe-analyzers.mjs",
+      "source_sha256": "849490eee2575c2d6fbd18c7d41d4505730e5222fe470438c7d2b23dbddc594e",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/probe-browser.mjs",
+      "source_sha256": "74070bd389bc41bf8210dc20d4ae998258dd23813e5ea7aa0e652fe4c5be4d17",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/resource_payload.py",
+      "source_sha256": "6f089e645459eba80c5d73e39c21606c78173a44daf49fabc3b88c4631ce51c6",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/resource-run.py",
+      "source_sha256": "7a9642ab86ba34290564f636eb080cacf38b4185a254028680b238bff172993b",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/review-model.py",
+      "source_sha256": "69325b9d3f5064f33984f5d484dc191105ec0fba344f601d95365d496bfe513c",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/review-packet.mjs",
+      "source_sha256": "33c35af7cd079c3f7e953963d7b9b4e4c14d6048ed07630e3fb07ce9901e0c65",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/review-saz.mjs",
+      "source_sha256": "4c42c29f2458fe336c4c5038d61f1d5a5ad705f02fbe5374fbe998f3ab00532b",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/review-signal.mjs",
+      "source_sha256": "16dc51d4017edddb4b29dd6e89821948dc0aefe93278b5683ab33dacdef4f2d2",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/saz-entry.mjs",
+      "source_sha256": "66cfae63d783d4ebb1ccd752478cac2eb002f3dc86ee5ad19916cacd8db86bad",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/saz-model-prompt.mjs",
+      "source_sha256": "e80e15b83448967401be92d52639ffe5b20fd51020ce207d4754b9b2f2e83ab3",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/saz-oracle.py",
+      "source_sha256": "12f82446ab066e2287aeab5914236134990e2636c1a0fc3cf94edf60384d6bb3",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/signal-entry.mjs",
+      "source_sha256": "78f4ba34b1160f59def98737fa746df1d22f26b884aa1f802efc536b94cc8e99",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/signal-model-prompt.mjs",
+      "source_sha256": "9e783efd50ead4c83c1530f87cc223070db04ce77b63efb0adcfff179d17fd63",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/signal-oracle.py",
+      "source_sha256": "b4bb9a8d1d45a6a1aadc2da29277d5f212bb43006af54d4fca090a1dbf1ec0ec",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/test_codex_context.py",
+      "source_sha256": "86636fae07a024682b5fed2dd97b2ae0964d3b3dcdea748c06a70672c36efa62",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/test_packet_oracle.py",
+      "source_sha256": "e8f0b426746010dc98b02062ef73acba0ad41c67d0c86a458b9b40138422a842",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/test_resource_payload.py",
+      "source_sha256": "3252e508b479a41608920d5fc22bd2830faca4c4808ae6094ade029713a7762d",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/test_saz_oracle.py",
+      "source_sha256": "9276f587c28a988faa1017ce22ac237517011687047685859169630313f1bd6f",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/test_signal_oracle.py",
+      "source_sha256": "df295d2b9e5313192530d39212e19592b17ffdf327c31a2959bdf9c416095c9f",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/verify-evm-lifecycle.mjs",
+      "source_sha256": "fc9a50e2e54e4c8eede4b8a19283e11ddaa1faadea52eebc390b55b5a1902668",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/verify-evm-retention.mjs",
+      "source_sha256": "b2ebf1f71b003910b3fa49420cc7e813ff535d45185b63f6fd8269b9bc07f64d",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/verify-evm-template.mjs",
+      "source_sha256": "ef7a1820f451696098e17b7b577b0f2f97856153ebc2aa60aae6d0566895939e",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/verify-migration.mjs",
+      "source_sha256": "a1bf9218e9c849bb8ceb267559e834bc85fe2c49f8e8bcef0f5ac51bcb3ea645",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/verify-preset-lifecycle.mjs",
+      "source_sha256": "f5d29efdb056032072b99ac1e6fe1d6d2099bbe84c324c75032bd0178bb747c5",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "experiments/analysis-efficiency/verify-preset-snapshot.mjs",
+      "source_sha256": "42060686f9633da06bb5f257fa5c70f588e66569cf0befebe6a1a13f43bf0e88",
+      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+    },
+    {
+      "original_path": "docs/.vitepress/config.ts",
+      "source_sha256": "28ef94fb7c88b10a7ccde161b49eabfc7451f78fc64523a123345b436de74a47",
+      "replacement": "Rea.Automation docs + docs/site.json"
+    },
+    {
+      "original_path": ".github/actions/publish-mcp/registry-state.mjs",
+      "source_sha256": "cde6c570db506dfee8faa0c8e563174d22e162089ac4bdba59db7707beb45bf2",
+      "replacement": "Rea.Automation registry-state"
+    },
+    {
+      "original_path": ".github/actions/publish-mcp/registry-state.d.mts",
+      "source_sha256": "8cd7c4cc28404e951d4317a197a2804e155872c6e3ef1a2ef5d1f5b2e5bcede1",
+      "replacement": "Rea.Automation registry-state"
+    }
+  ],
+  "note": "Original entry points remain in Git history. This mapping does not claim feature parity for unavailable providers, MCP, or model trials."
+}

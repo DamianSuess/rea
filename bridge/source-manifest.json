@@ -1,0 +1,166 @@
+{
+  "source_commit": "ef250b14442ad99458ef7ba1e59b78c809238675",
+  "policy": "Engine-required Python, Java and Swift sources are an explicit exception; application/orchestration code remains C#.",
+  "files": [
+    {
+      "path": "bridge/hopper_bridge.py",
+      "sha256": "b0eb572689fa5d664dfe8091ef4180141ef905b1af9ce4592961259f37aed9b6",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/android/ReaJadxBridge.java",
+      "sha256": "40c6972bc7e1689e09979b64ba49ba04b9c05e49976b838315d63d6415e762ba",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/cutter/rea_bridge.py",
+      "sha256": "f26875537d12d64d655a902c2ecc168f10c28e28ffbdd1695ab7e93ab90015ea",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/ghidra/ReaGhidraAnalysisOptions.java",
+      "sha256": "14200fb685d88c91b38f955ad360fe2e11b9a83a53cc69f87fd229c2e784e936",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/ghidra/ReaGhidraApplySeeds.java",
+      "sha256": "27892a70bf0fbc72d1edc9bf070ddb21268f8d0e4edea074164488e68f45d51a",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/ghidra/ReaGhidraBridge.java",
+      "sha256": "b4e9cbb41e66a73106960a96e2ba11f7da8b7f689922500db37fb1ae90c50eec",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/ghidra/ReaGhidraBundleActivator.java",
+      "sha256": "3e1fb42dc9b87c117dafd99bcec9cb51b3f0c9f0e7a2e9d4abd1f73ed7c0240e",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/ghidra/ReaGhidraExtensions.java",
+      "sha256": "23ed86c0f1c2144f8f0371398ba946883fa1607643b04c9eb02c883b3d4f4dfa",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/ghidra/ReaGhidraMipsSoftFloat.java",
+      "sha256": "5bb12cdedb4586576570fe781eeef47b554e8f255433246673ba714b6f48d375",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/ghidra/ReaGhidraNoReturnFix.java",
+      "sha256": "ceae3f352e96e8e0cebc4c2d66fa261a3732104eb1a2f84a32a6fc35a7281785",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/ghidra/ReaGhidraPrepareCom.java",
+      "sha256": "5a95ad24b70fe7430e1b3717781624faafdea47c463507f3245e7f22eb3cde46",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/ghidra/ReaGhidraPrepareRaw.java",
+      "sha256": "e858b93df3c23f1407fb79ad2abe20f05c52687ba5d082ccefb824ece92a3953",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/mitmproxy/capture.py",
+      "sha256": "daca512f3f86ab9fdcc3b611954d635bc1ac502d2f681ca60cdc8d87290d3311",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/mitmproxy/test_capture.py",
+      "sha256": "3fec1d8c2ef9a2df357c8b91df3bbb1bbf0b4e983f2277eb92486bf0b243d313",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/native/NativeUIChildren.swift",
+      "sha256": "0bc2c5e124de2f070e2ec12c129d9402004ae539de2adff1bd896c183309be42",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/native/rea_lldb_tracer.py",
+      "sha256": "ee51a628e4a4db4da79eabd79f23891ec5af17ab8525683b1c3d6c6b72d26b7b",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/native/ReaNativeUI.swift",
+      "sha256": "4413715438ea35edf9a872dd1cd2d4d7669ec8398fe3dc904fd0efad633a4615",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/native/test_rea_lldb_tracer.py",
+      "sha256": "53452689b51f468d510ea7eee0dc778c575e5915d5e20739059823096e62737f",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/nativeaot/NativeAotDirectory.java",
+      "sha256": "364f4f065926a4ad9b4c95f32772ebf782ed470c0432326f265b8a59d695e0fd",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/nativeaot/NativeAotExtension.java",
+      "sha256": "60fb33851bfd7c27e1b3f2ee287d89aa355605d3314118efecf5e37bf7186202",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/nativeaot/NativeAotMethodConventions.java",
+      "sha256": "2d4ec9a5b5825dbe1f4409cc60bcab325f3e1305302385e74bb9ac6cff620ae1",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/nativeaot/NativeAotTypeMetadata.java",
+      "sha256": "798828b2c4c3d2ae3d7cf510e3053c7fd67100419363bcd02997b48016a70192",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/process/ProcessRunTokenReader.swift",
+      "sha256": "b55e408534fd0d78d512d9f895fc366fd9e4200e8b0732143c473c8667b5418e",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/process/ProcessRunTokenReaderMain.swift",
+      "sha256": "c3f4fbc5a43ff2e1c3c3ae0a99e6dba31e81dc816b7936c27e4f762f2bfee05c",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/pwndbg/core_context.py",
+      "sha256": "f5162adf3bcf0342bddfd60789b65ece8cdabd904e1e4749ca94869f61055bf4",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/pwndbg/launch_impl.py",
+      "sha256": "a46c8453c154ebf02f666156a41f1d7c7bab7af60ae23eb5661840217785f807",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/pwndbg/launch.py",
+      "sha256": "ee2e32337546034af71f0206d88676291b60cbcefe9e7558fdecd5e5b4c23103",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/pwntools/decoder_runtime.py",
+      "sha256": "46a066d55314f0a3fa72b2ac14ddcd18bca2c21f975115347cefd2286741e410",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/pwntools/layout_impl.py",
+      "sha256": "bbc0d8773ef5f355974c3945e13394beb45ff7472ff00ac9eee9ca13576b85ad",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/pwntools/layout.py",
+      "sha256": "0b3c9a2b511531b3c7d21bc0b09ea8e2eb2767d61313a377f8855bb133c2fb48",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/pwntools/recorded_crash_impl.py",
+      "sha256": "c87e8a6224c1428449c40d23ddd822b810c1e5ce8eba24caa0368caeae3b4d06",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    },
+    {
+      "path": "bridge/pwntools/recorded_crash.py",
+      "sha256": "1ff9358501ffd02af6e33d1ec759d2018171c33c749049bf3599335eca7a41bb",
+      "status": "source-restored; C# adapter unavailable; real-engine behavior unverified"
+    }
+  ]
+}
