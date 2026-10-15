@@ -1,6 +1,8 @@
 using System.Diagnostics;
 using Rea.Tests;
 
+if (args.Length >= 2 && args[0] == "--experiment-fixture") return await ExperimentFixture.Run(args[1..]);
+
 string? reportPath = null;
 if (args.Length == 2 && args[0] == "--report") { reportPath = args[1]; args = []; }
 var selected = args.Length == 0

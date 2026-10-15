@@ -11,6 +11,11 @@ fail before execution. Use the [C# scripts project](../scripts/README.md) for th
 repository, isolated cleanup and installed-package gates used by CI. It replaces
 the former JavaScript/Python validation entrypoints.
 
+The [C# experiment sanity checks](../experiments/analysis-efficiency/CSharp.md#sanity-checks)
+are included in this same discovered suite. Their process fixtures are C#, not
+restored JavaScript/Python experiments. They do not establish real-provider support
+or native process-family resource enforcement.
+
 Prefer real public CLI workflows, then provider-boundary integration, then module
 tests for distinct semantics. Preserve malformed-input, cancellation, permission,
 capacity, cleanup and identity coverage. The managed fixture is built from C#;

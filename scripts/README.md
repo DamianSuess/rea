@@ -16,6 +16,9 @@ dotnet exec scripts/bin/Release/net10.0/Rea.Validation.dll package . dotnet/arti
 - Test discovery automatically enumerates compiled test suites and compares them
   with the source inventory. Missing, unexpected, duplicate and empty suites fail;
   duplicate case names fail. Package tests are a separate explicit selection.
+- Experiment sanity cases use real C# CLI workflows and controlled C# children to
+  check measurement identities, report comparisons, output limits, deadlines,
+  cancellation and exclusive-file release. See the [experiment guide](../experiments/analysis-efficiency/CSharp.md).
 - Architecture validation checks project references and compiled assembly
   references against the allowed domain, application, managed-provider and CLI
   dependency directions. New application projects require a policy entry.

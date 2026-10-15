@@ -14,12 +14,12 @@
     {
       "original_path": "experiments/analysis-efficiency/compare.mjs",
       "source_sha256": "b0d721f5662c6b76355437daed4f6057066bf85bd451155f583cd46f7fc7f7ab",
-      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+      "replacement": "C# ExperimentCommand, ExperimentReport and ExperimentTests: measure/verify/compare, independent input digests, report rejection and evidence preservation for the two current CLI commands"
     },
     {
       "original_path": "experiments/analysis-efficiency/measure.mjs",
       "source_sha256": "4780698e1e3d526292e923863f055a146f78c2de49809a5ea24562ca9f9c67d3",
-      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+      "replacement": "C# ExperimentCommand, ExperimentReport and ExperimentTests: measure/verify/compare, independent input digests, report rejection and evidence preservation for the two current CLI commands"
     },
     {
       "original_path": "experiments/analysis-efficiency/native-entry.mjs",
@@ -54,12 +54,12 @@
     {
       "original_path": "experiments/analysis-efficiency/resource_payload.py",
       "source_sha256": "6f089e645459eba80c5d73e39c21606c78173a44daf49fabc3b88c4631ce51c6",
-      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+      "replacement": "Selective C# ProcessMeasurement and ExperimentTests: direct child deadlines, cancellation, bounded stdout/stderr and file-lease release. Native CPU/memory enforcement, owned native scopes and full descendant verification remain unavailable"
     },
     {
       "original_path": "experiments/analysis-efficiency/resource-run.py",
       "source_sha256": "7a9642ab86ba34290564f636eb080cacf38b4185a254028680b238bff172993b",
-      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+      "replacement": "Selective C# ProcessMeasurement and ExperimentTests: direct child deadlines, cancellation, bounded stdout/stderr and file-lease release. Native CPU/memory enforcement, owned native scopes and full descendant verification remain unavailable"
     },
     {
       "original_path": "experiments/analysis-efficiency/review-model.py",
@@ -124,7 +124,7 @@
     {
       "original_path": "experiments/analysis-efficiency/test_resource_payload.py",
       "source_sha256": "3252e508b479a41608920d5fc22bd2830faca4c4808ae6094ade029713a7762d",
-      "replacement": "Rea.Experiments measure/compare for current CLI; historical provider/model cases unavailable"
+      "replacement": "Selective C# ProcessMeasurement and ExperimentTests: direct child deadlines, cancellation, bounded stdout/stderr and file-lease release. Native CPU/memory enforcement, owned native scopes and full descendant verification remain unavailable"
     },
     {
       "original_path": "experiments/analysis-efficiency/test_saz_oracle.py",
