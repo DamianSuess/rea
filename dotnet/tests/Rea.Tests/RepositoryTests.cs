@@ -47,6 +47,13 @@ internal static class RepositoryTests
             {
                 if (current == root && Path.GetFileName(file) == ".git") continue;
                 var relative = Path.GetRelativePath(root, file).Replace('\\', '/');
+                if (relative == "install.sh")
+                {
+                    var launcher = File.ReadAllText(file).Replace("\r\n", "\n", StringComparison.Ordinal);
+                    if (launcher != "#!/bin/sh\n{\n# Compatibility launcher only; all installation behavior lives in C#.\nset -eu\nroot=$(CDPATH= cd -- \"$(dirname -- \"$0\")\" && pwd)\nexec dotnet run --project \"$root/dotnet/tools/Rea.Installer/Rea.Installer.csproj\" --configuration Release -- \"$@\"\n}\n")
+                        yield return relative + " (only the C# compatibility launcher is permitted)";
+                    continue;
+                }
                 if (bridges.TryGetValue(relative, out var expected))
                 {
                     if (!relative.StartsWith("bridge/", StringComparison.Ordinal) || Path.GetExtension(file) is not (".py" or ".java" or ".swift"))

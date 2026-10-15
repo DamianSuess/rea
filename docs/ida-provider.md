@@ -1,3 +1,5 @@
+> **C# compatibility status:** Restored from `ef250b14442ad99458ef7ba1e59b78c809238675`. The text below records the former implementation. Follow [the current C# guide](dotnet-workflows.md) for executable commands. Historical npm, MCP, provider and model-trial examples are not supported by the current C# runtime. Do not treat historical verification as current verification.
+
 # IDA provider
 
 REA adapts an existing IDA MCP server into its native analysis tools. Existing IDA Pro profiles use [mrexodia/ida-pro-mcp](https://github.com/mrexodia/ida-pro-mcp); an optional native bridge for IDA Pro and IDA Free is described below. Install and configure your selected engine and upstream MCP using their instructions. REA does not install, upgrade, activate, or license them, and does not bundle another IDA server.

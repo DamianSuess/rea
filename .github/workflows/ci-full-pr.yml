@@ -1,18 +1,10 @@
-name: Full PR qualification
-
+name: Full PR verification
 on:
-  pull_request:
-    branches: [main, "release/*"]
-    types: [labeled]
-
+  workflow_dispatch:
 permissions:
   contents: read
-  actions: read
-
 jobs:
-  qualification:
-    name: Qualify labeled PR revision
-    if: github.event.label.name == 'ci:full'
-    uses: ./.github/workflows/ci.yml
+  checks:
+    uses: ./.github/workflows/dotnet.yml
     with:
       source_sha: ${{ github.sha }}

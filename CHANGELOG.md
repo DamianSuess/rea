@@ -1,5 +1,18 @@
 # Changelog
 
+## Unreleased — C#-only cutover (breaking)
+
+- Make the .NET 10 solution the sole implementation and build entry point.
+- Remove legacy TypeScript/JavaScript and other-language implementations,
+  bridges, submodules, website, installers, npm tooling, tests and workflows.
+- Retain executable-header and static managed-assembly inspection in C#.
+- Add a repository policy check rejecting foreign source and legacy manifests.
+
+This is a reduced application, not a feature-equivalent conversion. MCP, deep
+providers, Evidence/session workflows and other unported functionality are
+unavailable. The README defines current support. All entries below describe
+historical releases of the removed implementation.
+
 ## [6.5.0](https://github.com/morluto/rea/compare/rea-agents-6.4.0...rea-agents-6.5.0) (2026-10-13)
 
 Provider prerequisites and recorded verification scope are listed in [the testing guide](docs/testing.md).

@@ -1,3 +1,5 @@
+> **C# compatibility status:** Restored from `ef250b14442ad99458ef7ba1e59b78c809238675`. The text below records the former implementation. Follow [the current C# guide](dotnet-workflows.md) for executable commands. Historical npm, MCP, provider and model-trial examples are not supported by the current C# runtime. Do not treat historical verification as current verification.
+
 # JEB instrumentation and analysis
 
 REA exposes JEB-backed project, unit, and decompilation inspection through the CLI and MCP, served by JEB's own MCP interface. JEB is a bring-your-own engine: REA never installs it, launches it, or opens its project databases itself.

@@ -1,3 +1,5 @@
+> **C# compatibility status:** Restored from `ef250b14442ad99458ef7ba1e59b78c809238675`. The text below records the former implementation. Follow [the current C# guide](dotnet-workflows.md) for executable commands. Historical npm, MCP, provider and model-trial examples are not supported by the current C# runtime. Do not treat historical verification as current verification.
+
 # Firmware analysis
 
 REA accepts **Binwalk 3.1.x** for region inspection and **Unblob 26.6.x** for

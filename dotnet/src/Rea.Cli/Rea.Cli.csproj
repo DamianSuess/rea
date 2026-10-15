@@ -6,12 +6,13 @@
     <ToolCommandName>rea</ToolCommandName>
     <PackageId>Rea.DotNet.Preview</PackageId>
     <Version>0.1.0</Version>
-    <Description>REA C# migration preview: executable header inspection.</Description>
+    <Description>REA C# migration preview: executable headers and static managed assembly inspection.</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="../Rea.Application/Rea.Application.csproj" />
+    <ProjectReference Include="../Rea.Managed/Rea.Managed.csproj" />
     <None Include="../../README.md" Pack="true" PackagePath="/" />
   </ItemGroup>
 </Project>

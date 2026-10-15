@@ -3,6 +3,9 @@
     <OutputType>Exe</OutputType>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="../../tools/Rea.Installer/Rea.Installer.csproj" />
+    <ProjectReference Include="../../tools/Rea.Automation/Rea.Automation.csproj" />
     <ProjectReference Include="../../src/Rea.Cli/Rea.Cli.csproj" />
+    <ProjectReference Include="../fixtures/Rea.ManagedFixture/Rea.ManagedFixture.csproj" />
   </ItemGroup>
 </Project>

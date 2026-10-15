@@ -1,3 +1,5 @@
+> **C# compatibility status:** Restored from `ef250b14442ad99458ef7ba1e59b78c809238675`. The text below records the former implementation. Follow [the current C# guide](../../docs/dotnet-workflows.md) for executable commands. Historical npm, MCP, provider and model-trial examples are not supported by the current C# runtime. Do not treat historical verification as current verification.
+
 # Process trace validation
 
 A 6,000-event directed cycle previously overflowed the JavaScript stack inside

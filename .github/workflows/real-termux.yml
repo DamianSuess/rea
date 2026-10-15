@@ -1,57 +1,17 @@
-name: Real Termux browser verification
-
+name: real-termux (provider coverage unavailable)
 on:
   workflow_dispatch:
-
-concurrency:
-  group: real-termux-${{ github.ref }}
-  cancel-in-progress: false
-
 permissions:
   contents: read
-
-env:
-  HUSKY: "0"
-
 jobs:
-  real-termux:
-    runs-on: ubuntu-latest
-    timeout-minutes: 45
+  availability:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
-      - name: Download the pinned Termux app and verify its release checksum
-        shell: bash
-        run: |
-          mkdir -p "$RUNNER_TEMP/rea-termux"
-          cd "$RUNNER_TEMP/rea-termux"
-          release=https://github.com/termux/termux-app/releases/download/v0.118.3
-          apk=termux-app_v0.118.3+github-debug_x86_64.apk
-          sums=termux-app_v0.118.3+github-debug_sha256sums
-          curl --fail --location --retry 3 --output "$apk" "$release/$apk"
-          curl --fail --location --retry 3 --output "$sums" "$release/$sums"
-          awk -v apk="$apk" '$2 == apk || $2 == "*" apk' "$sums" > selected.sha256
-          test "$(wc -l < selected.sha256)" -eq 1
-          sha256sum --check selected.sha256
-      - name: Enable emulator acceleration
-        run: |
-          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
-          sudo udevadm control --reload-rules
-          sudo udevadm trigger --name-match=kvm
-      - name: Build and capture a page inside Termux
-        uses: reactivecircus/android-emulator-runner@a421e43855164a8197daf9d8d40fe71c6996bb0d # v2.38.0
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9
         with:
-          api-level: 30
-          arch: x86_64
-          target: google_apis
-          ram-size: 4096M
-          heap-size: 512M
-          disk-size: 8192M
-          disable-animations: true
-          script: bash scripts/verify/termux/emulator.sh
-      - name: Upload Termux and Android diagnostics
-        if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
-        with:
-          name: termux-browser-diagnostics
-          path: ${{ runner.temp }}/rea-termux/diagnostics
-          if-no-files-found: warn
+          dotnet-version: '10.0.x'
+      - run: dotnet build dotnet/tools/Rea.Automation/Rea.Automation.csproj --configuration Release --nologo
+      - name: Report unavailable coverage without a false pass
+        run: dotnet exec dotnet/tools/Rea.Automation/bin/Release/net10.0/Rea.Automation.dll unavailable real-termux

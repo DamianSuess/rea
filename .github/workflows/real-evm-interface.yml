@@ -1,49 +1,17 @@
-name: Real offline EVM interface
-
+name: real-evm-interface (provider coverage unavailable)
 on:
   workflow_dispatch:
-  workflow_call:
-    inputs:
-      build_cache_artifact:
-        description: Portable build cache artifact from the calling CI run.
-        required: false
-        type: string
-        default: ""
-
 permissions:
   contents: read
-
-env:
-  NODE_OPTIONS: --max-old-space-size=768
-  HUSKY: "0"
-
 jobs:
-  real-evm-interface:
+  availability:
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9
         with:
-          node-version-file: .nvmrc
-      - name: Cache npm package downloads
-        id: npm-cache
-        uses: ./.github/actions/npm-cache
-      - run: npm ci
-      - uses: ./.github/actions/portable-build-cache
-        with:
-          build_cache_artifact: ${{ inputs.build_cache_artifact }}
-      - name: Acquire unchanged fixture compiler in isolated runner storage
-        shell: bash
-        run: |
-          evm_fixture_root="${RUNNER_TEMP}/rea-evm-fixture-compiler"
-          mkdir -p "${evm_fixture_root}"
-          npm install --prefix "${evm_fixture_root}" --ignore-scripts --no-audit --no-fund --save-exact solc@0.8.30
-          command -v prlimit
-          command -v strace
-          echo "REA_VERIFY_STRACE_COMMAND=$(command -v strace)" >> "${GITHUB_ENV}"
-          echo "REA_VERIFY_SOLC_MODULE=${evm_fixture_root}/node_modules/solc/index.js" >> "${GITHUB_ENV}"
-      - name: Verify source-owned compiled bytecode through public CLI and MCP
-        run: npm run verify:evm:interface
-      - name: Verify content-hash-free and CBOR-free owned compiler artifacts
-        run: npm run verify:solidity:metadata
+          dotnet-version: '10.0.x'
+      - run: dotnet build dotnet/tools/Rea.Automation/Rea.Automation.csproj --configuration Release --nologo
+      - name: Report unavailable coverage without a false pass
+        run: dotnet exec dotnet/tools/Rea.Automation/bin/Release/net10.0/Rea.Automation.dll unavailable real-evm-interface

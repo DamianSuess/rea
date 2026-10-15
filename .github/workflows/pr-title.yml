@@ -1,29 +1,24 @@
 name: PR title
-
 on:
   pull_request:
-    branches: [main, "release/*"]
+    branches: [main, 'release/*']
     types: [opened, synchronize, reopened, edited]
-
-permissions: {}
-
-concurrency:
-  group: pr-title-${{ github.event.pull_request.number }}
-  cancel-in-progress: true
-
+permissions:
+  contents: read
 jobs:
   pr-title:
     name: Conventional PR title
     runs-on: ubuntu-24.04
-    timeout-minutes: 2
+    timeout-minutes: 5
     steps:
-      - name: Validate title for Release Please
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9
+        with:
+          dotnet-version: '10.0.x'
+      - run: dotnet build dotnet/tools/Rea.Automation/Rea.Automation.csproj --configuration Release --nologo
+      - name: Validate title as data, never as a shell expression
         env:
           PR_TITLE: ${{ github.event.pull_request.title }}
-        run: >-
-          node -e 'const title = process.env.PR_TITLE ?? "";
-          const conventional = /^(?:feat|fix|docs|refactor|perf|test|build|ci|chore|revert)(?:\([a-z0-9._/-]+\))?!?: .+/u;
-          if (!conventional.test(title)) {
-            console.error("PR title must use Conventional Commits, for example: feat: add historical source import");
-            process.exit(1);
-          }'
+        run: dotnet exec dotnet/tools/Rea.Automation/bin/Release/net10.0/Rea.Automation.dll title

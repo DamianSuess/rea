@@ -1,16 +1,14 @@
-name: C# migration
-
+name: .NET 10 verification
 on:
-  push:
-    branches: [main]
-    paths: ["dotnet/**", ".github/workflows/dotnet.yml"]
-  pull_request:
-    paths: ["dotnet/**", ".github/workflows/dotnet.yml"]
+  workflow_call:
+    inputs:
+      source_sha:
+        type: string
+        required: false
+        default: ''
   workflow_dispatch:
-
 permissions:
   contents: read
-
 jobs:
   verify:
     name: .NET 10 (${{ matrix.os }})
@@ -20,17 +18,29 @@ jobs:
         os: [ubuntu-24.04, windows-2025, macos-15]
     runs-on: ${{ matrix.os }}
     timeout-minutes: 10
-    defaults:
-      run:
-        working-directory: dotnet
     steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
-      - uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9 # v4.3.1
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          dotnet-version: "10.0.x"
-      - name: Build
-        run: dotnet build Rea.slnx --configuration Release --nologo
-      - name: Run regression and CLI tests
-        run: dotnet exec tests/Rea.Tests/bin/Release/net10.0/Rea.Tests.dll
-      - name: Pack CLI preview
-        run: dotnet pack src/Rea.Cli --configuration Release --no-build --output artifacts/packages
+          ref: ${{ inputs.source_sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9
+        with:
+          dotnet-version: '10.0.x'
+      - run: dotnet build Rea.slnx --configuration Release --nologo
+      - name: Execute actual test cases and retain timing/failure evidence
+        run: dotnet exec dotnet/tests/Rea.Tests/bin/Release/net10.0/Rea.Tests.dll --report dotnet/artifacts/reports/test-results.json
+      - name: Reject missing, empty or failed reports
+        run: dotnet exec dotnet/tools/Rea.Automation/bin/Release/net10.0/Rea.Automation.dll verify-report dotnet/artifacts/reports/test-results.json
+      - run: dotnet pack dotnet/src/Rea.Cli --configuration Release --no-build --output dotnet/artifacts/packages
+      - run: dotnet exec dotnet/tests/Rea.Tests/bin/Release/net10.0/Rea.Tests.dll --verify-packages dotnet/artifacts/packages
+      - name: Bind package bytes to the selected source
+        env:
+          REA_SOURCE_SHA: ${{ inputs.source_sha || github.sha }}
+          REA_PACKAGE_DIRECTORY: dotnet/artifacts/packages
+        run: dotnet exec dotnet/tools/Rea.Automation/bin/Release/net10.0/Rea.Automation.dll qualify-directory-env
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: dotnet-verification-${{ matrix.os }}
+          path: dotnet/artifacts/
+          if-no-files-found: error

@@ -1,3 +1,5 @@
+> **C# compatibility status:** Restored from `ef250b14442ad99458ef7ba1e59b78c809238675`. The text below records the former implementation. Follow [the current C# guide](dotnet-workflows.md) for executable commands. Historical npm, MCP, provider and model-trial examples are not supported by the current C# runtime. Do not treat historical verification as current verification.
+
 # Kuna provider
 
 [Kuna](https://github.com/Noelo-Lab/kuna) is an Apache-2.0 decompiler distributed as one `kuna` executable. REA uses a `kuna` you supply. It does not download, install, update or bundle Kuna. REA verified this provider with Kuna 1.833; it accepts other releases and reports them as unverified in `rea doctor` and in each analysis profile.

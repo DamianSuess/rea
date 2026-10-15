@@ -7,6 +7,9 @@ labels:
 body:
   - type: markdown
     attributes:
+      value: 'C# checkout status: inspect-header and inspect-managed-artifact are available. Restored provider guides and bridge sources are historical/source integrations; reporting an area does not establish current support. See docs/dotnet-workflows.md.'
+  - type: markdown
+    attributes:
       value: |
         Use this for a substantial provider, public/persisted contract, or
         authority-boundary decision. One question and a short explanation are

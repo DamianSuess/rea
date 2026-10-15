@@ -7,6 +7,9 @@ labels:
 body:
   - type: markdown
     attributes:
+      value: 'C# checkout status: inspect-header and inspect-managed-artifact are available. Restored provider guides and bridge sources are historical/source integrations; reporting an area does not establish current support. See docs/dotnet-workflows.md.'
+  - type: markdown
+    attributes:
       value: |
         Report one documentation problem with the exact location and the smallest
         useful supporting passage, example, or result. Keep answers concise.

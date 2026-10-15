@@ -1,50 +1,23 @@
-# Security Policy
+# Security
 
-## Supported versions
+The application is a C# static file inspection tool. It does not implement the
+legacy MCP server, active engine adapters, debugger or instrumentation workflows.
+Restored bridge sources are separate and are not enabled or executed by the C# app. Old
+claims about authenticated bridge transports do not apply to this checkout.
 
-Security fixes are provided for the latest published version of REA. Upgrade to the latest release before reporting a problem that may already have been resolved.
+Inspection opens the selected local file for reading. Managed inspection uses
+metadata parsing, not `Assembly.Load`, and never invokes target code. Treat
+parsers and input files as untrusted boundaries. File sharing and snapshot
+digests do not establish an atomic cross-platform filesystem snapshot or sandbox.
 
-## Reporting a vulnerability
+Report vulnerabilities privately through the repository's Security tab. Include
+the commit/package version, OS, selected command, impact, and smallest useful
+reproduction. Do not post credentials, proprietary binaries, private provider
+projects or unrelated local information publicly.
 
-Do not disclose vulnerabilities, proof-of-concept exploits, credentials,
-private binaries, Hopper documents, or private Ghidra projects in a public
-issue.
+The local preview package has not been published by this cutover. Historical
+release support and verification do not establish verification of this rewrite.
 
-Use **Report a vulnerability** in the repository's **Security** tab to submit the report privately. Do not open a public issue to request a private contact channel.
-
-Include the affected REA version, operating system/distribution, selected
-provider and version, impact, reproduction conditions, and any suggested
-mitigation in the private report. Remove credentials, proprietary binaries,
-Hopper documents, Ghidra project contents, socket capability tokens, and
-unrelated local paths from logs or examples.
-
-The maintainer will acknowledge the report, assess its scope, and coordinate
-remediation and disclosure timing with the reporter. Please allow time for
-provider-dependent behavior to be reproduced safely.
-
-## Security boundary
-
-REA authenticates its Hopper and Ghidra bridges with per-session random
-capability tokens. POSIX uses current-user Unix sockets; Windows Ghidra uses
-authenticated loopback TCP with a private NTFS runtime whose DACL admits only
-the current user and SYSTEM. See [Windows Ghidra P0](docs/windows-ghidra-p0.md#private-runtime-transport-and-lifecycle).
-Tokens are transferred through private session descriptors rather than process
-arguments or environment variables.
-This is not a sandbox and does not protect against malicious processes already
-running as the same operating-system user. Opening an untrusted binary
-delegates parsing and analysis to the selected local provider with that user's
-permissions.
-
-Ghidra sessions use a packaged Java `HeadlessScript`, an isolated temporary
-project, and private home, cache, and runtime directories. REA imports only the
-requested target, bounds startup and protocol messages, requests bounded CPU
-and heap settings, and deletes the temporary project when the session closes.
-These controls limit accidental persistence and resource use; they do not make
-Ghidra a sandbox. REA does not open or modify user-owned Ghidra projects.
-
-`GHIDRA_INSTALL_DIR` and optional `JAVA_HOME` identify user-managed
-installations. Setup can add those values to detected client configuration only
-after showing its plan and receiving approval. REA does not download, install,
-upgrade, or modify Ghidra or Java.
-
-On Linux, REA accepts release metadata only from Hopper's HTTPS endpoint, restricts package URLs to Hopper's public download origin, bounds the package size, and compares the downloaded bytes with Hopper's published checksum before requesting installation. The published SHA-1 value is a corruption check, not a modern package signature; HTTPS origin validation remains part of the trust boundary. Dependency installation is delegated without shell evaluation to `apt-get`, `dnf`, or `pacman`, directly as root or through `pkexec`. REA never invokes `sudo`.
+Restored PR readiness automation checks metadata using trusted default-branch C#
+code, scoped API credentials and no PR-head execution. Release qualification is
+not publication authority. Unported provider and publication lanes fail explicitly.

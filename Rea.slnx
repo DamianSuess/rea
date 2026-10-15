@@ -5,6 +5,7 @@
   <Project Path="dotnet/src/Rea.Cli/Rea.Cli.csproj" />
   <Project Path="dotnet/tests/Rea.Tests/Rea.Tests.csproj" />
   <Project Path="dotnet/tools/Rea.Automation/Rea.Automation.csproj" />
+  <Project Path="dotnet/tools/Rea.Installer/Rea.Installer.csproj" />
   <Project Path="experiments/analysis-efficiency/Rea.Experiments.csproj" />
   <Project Path="dotnet/tests/fixtures/Rea.ManagedFixture/Rea.ManagedFixture.csproj" />
 </Solution>

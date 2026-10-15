@@ -1,76 +1,17 @@
-name: Real upstream Cutter verification
-
+name: real-cutter (provider coverage unavailable)
 on:
   workflow_dispatch:
-  repository_dispatch:
-    types: [real-cutter-upstream]
-
 permissions:
   contents: read
-
 jobs:
-  windows-native-artifact:
-    name: Build Windows bridge security boundary
-    runs-on: ubuntu-latest
+  availability:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9
         with:
-          node-version-file: .nvmrc
-      - name: Install the cross compiler used by the Windows native lane
-        run: |
-          sudo apt-get update
-          sudo apt-get install --no-install-recommends -y g++-mingw-w64-x86-64
-      - run: npm run build:windows-native
-      - uses: actions/upload-artifact@v4
-        with:
-          name: cutter-windows-native
-          path: native/windows/build/
-          if-no-files-found: error
-
-  cutter-upstream:
-    name: Cutter upstream smoke (${{ matrix.platform }})
-    needs: windows-native-artifact
-    runs-on: ${{ matrix.runner }}
-    timeout-minutes: 20
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - platform: linux
-            runner: [self-hosted, cutter-upstream, linux]
-          - platform: macOS
-            runner: [self-hosted, cutter-upstream, macOS]
-          - platform: Windows
-            runner: [self-hosted, cutter-upstream, Windows]
-    steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
-      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
-        with:
-          node-version-file: .nvmrc
-      - name: Cache npm package downloads
-        id: npm-cache
-        uses: ./.github/actions/npm-cache
-      - run: npm ci
-      - if: matrix.platform == 'Windows'
-        uses: actions/download-artifact@v4
-        with:
-          name: cutter-windows-native
-          path: native/windows/build/
-      - if: matrix.platform == 'Windows'
-        run: npm run verify:windows-native:artifact
-      - if: matrix.platform == 'Windows'
-        run: npm run build:cached
-      - if: matrix.platform == 'Windows'
-        run: npm run verify:windows-native
-      - name: Verify host and real Cutter bridge
-        env:
-          EXPECTED_PLATFORM: ${{ matrix.platform }}
-        run: npm run verify:cutter
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: cutter-upstream-${{ matrix.platform }}
-          path: cutter-smoke.json
-          if-no-files-found: ignore
-          retention-days: 30
+          dotnet-version: '10.0.x'
+      - run: dotnet build dotnet/tools/Rea.Automation/Rea.Automation.csproj --configuration Release --nologo
+      - name: Report unavailable coverage without a false pass
+        run: dotnet exec dotnet/tools/Rea.Automation/bin/Release/net10.0/Rea.Automation.dll unavailable real-cutter

@@ -1,51 +1,38 @@
 name: PR readiness
-
 on:
   pull_request_target:
-    branches: [main, "release/*"]
-    types:
-      [
-        opened,
-        edited,
-        synchronize,
-        reopened,
-        ready_for_review,
-        converted_to_draft,
-      ]
+    branches: [main, 'release/*']
+    types: [opened, edited, synchronize, reopened, ready_for_review, converted_to_draft]
   workflow_dispatch:
     inputs:
       pull_request_number:
         description: Open PR to recheck
         required: true
         type: string
-
 permissions: {}
-
 concurrency:
   group: pr-readiness-${{ github.event.pull_request.number || inputs.pull_request_number }}
   cancel-in-progress: true
-
 jobs:
   readiness:
     name: Validate author declaration
     runs-on: ubuntu-24.04
-    timeout-minutes: 3
+    timeout-minutes: 5
     permissions:
       contents: read
       pull-requests: read
       statuses: write
     steps:
-      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: ${{ github.event.repository.default_branch }}
           persist-credentials: false
-      - name: Check initial readiness
-        uses: actions/github-script@373c709c69115d41ff229c7e5df9f8788daa9553 # v9
+      - uses: actions/setup-dotnet@67a3573c9a986a3f9c594539f4ab511d57bb3ce9
         with:
-          script: |
-            const { pathToFileURL } = require("node:url");
-            const entry = pathToFileURL(
-              `${process.env.GITHUB_WORKSPACE}/scripts/ci/pr-readiness.mjs`,
-            );
-            const { runReadinessCheck } = await import(entry.href);
-            await runReadinessCheck({ github, context, core });
+          dotnet-version: '10.0.x'
+      - name: Build only trusted default-branch automation
+        run: dotnet build dotnet/tools/Rea.Automation/Rea.Automation.csproj --configuration Release --nologo
+      - name: Validate metadata and publish the PR readiness status
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: dotnet exec dotnet/tools/Rea.Automation/bin/Release/net10.0/Rea.Automation.dll readiness-github
