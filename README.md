@@ -26,6 +26,10 @@
 
 </div>
 
+The [C# / .NET 10 migration preview](dotnet/README.md) builds and runs without
+Node or TypeScript. Its current scope is executable-header inspection; the full
+REA CLI and MCP migration is still incomplete.
+
 > [!IMPORTANT]
 > Get REA from [morluto/rea](https://github.com/morluto/rea),
 > [rea.tools](https://rea.tools/), or the [rea-agents npm package](https://www.npmjs.com/package/rea-agents).

@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="src/Rea.Domain/Rea.Domain.csproj" />
+  <Project Path="src/Rea.Application/Rea.Application.csproj" />
+  <Project Path="src/Rea.Cli/Rea.Cli.csproj" />
+  <Project Path="tests/Rea.Tests/Rea.Tests.csproj" />
+</Solution>

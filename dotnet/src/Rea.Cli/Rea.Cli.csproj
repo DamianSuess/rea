@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>rea</AssemblyName>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>rea</ToolCommandName>
+    <PackageId>Rea.DotNet.Preview</PackageId>
+    <Version>0.1.0</Version>
+    <Description>REA C# migration preview: executable header inspection.</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Rea.Application/Rea.Application.csproj" />
+    <None Include="../../README.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
+</Project>

@@ -4,6 +4,9 @@ __pycache__/
 *$py.class
 
 # Distribution
+/dotnet/**/bin/
+/dotnet/**/obj/
+/dotnet/artifacts/
 dist/
 build/
 node_modules
