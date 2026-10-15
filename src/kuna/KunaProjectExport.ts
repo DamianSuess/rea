@@ -67,8 +67,11 @@ export interface KunaExport {
 /** The step an export is in; Kuna itself reports no progress until it finishes. */
 export interface KunaExportStatus {
   readonly phase: "inventory" | "decompiling" | "sealing";
-  /** Callable entries found by the inventory, once known. */
-  readonly inventoryFunctions: number | null;
+  /**
+   * Every callable entry the export's inventory found, once known. Listings
+   * use it while the export still decompiles, so no second inventory runs.
+   */
+  readonly inventory: readonly KunaInventoryFunction[] | null;
 }
 
 /**
@@ -207,7 +210,7 @@ export const exportKunaProject = async (
     };
   };
 
-  request.onStatus({ phase: "inventory", inventoryFunctions: null });
+  request.onStatus({ phase: "inventory", inventory: null });
   const listed = await run(
     ["functions", input, "--json"],
     KUNA_INVENTORY_OUTPUT_BYTES,
@@ -223,10 +226,7 @@ export const exportKunaProject = async (
     { mode: 0o600 },
   );
 
-  request.onStatus({
-    phase: "decompiling",
-    inventoryFunctions: inventory.value.length,
-  });
+  request.onStatus({ phase: "decompiling", inventory: inventory.value });
   const exported = await run(
     [
       "decompile-project",
@@ -240,10 +240,7 @@ export const exportKunaProject = async (
   );
   if (!exported.ok) return exported.outcome;
 
-  request.onStatus({
-    phase: "sealing",
-    inventoryFunctions: inventory.value.length,
-  });
+  request.onStatus({ phase: "sealing", inventory: inventory.value });
   const summary = parseKunaExportSummary(exported.snapshot.stdout.text);
   if (summary === undefined)
     return unusable(

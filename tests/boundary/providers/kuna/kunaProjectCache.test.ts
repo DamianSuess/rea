@@ -463,11 +463,17 @@ it("reports each build phase to every waiting request", async () => {
   });
 
   expect(result.ok).toBe(true);
-  expect(statuses).toEqual([
-    { phase: "inventory", inventoryFunctions: null },
-    { phase: "decompiling", inventoryFunctions: 3 },
-    { phase: "sealing", inventoryFunctions: 3 },
+  expect(
+    statuses.map(({ phase, inventory }) => [phase, inventory?.length ?? null]),
+  ).toEqual([
+    ["inventory", null],
+    ["decompiling", 3],
+    ["sealing", 3],
   ]);
+  // Waiters receive the export's own parsed inventory.
+  expect(statuses.at(-1)?.inventory).toEqual(
+    result.ok ? result.value.inventory : undefined,
+  );
 });
 
 it("sweeps retired entries but preserves staging with unresolved process ownership", async () => {

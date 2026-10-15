@@ -150,6 +150,8 @@ interface InflightBuild {
   readonly promise: Promise<Result<KunaProject, AnalysisError>>;
   readonly controller: AbortController;
   readonly listeners: Set<(status: KunaExportStatus) => void>;
+  /** The latest status, replayed to requests that join after it was reported. */
+  status: KunaExportStatus | undefined;
   waiters: number;
 }
 
@@ -334,7 +336,9 @@ export class KunaProjectCache {
       return this.#await(running, request);
     const controller = new AbortController();
     const listeners = new Set<(status: KunaExportStatus) => void>();
+    // #produce reports its first status only after an await, once `created` exists.
     const promise = this.#produce(key, request, controller.signal, (status) => {
+      created.status = status;
       for (const listener of listeners) listener(status);
     });
     const created: InflightBuild = {
@@ -342,6 +346,7 @@ export class KunaProjectCache {
       promise,
       controller,
       listeners,
+      status: undefined,
       waiters: 0,
     };
     this.#inflight.set(key, created);
@@ -443,7 +448,10 @@ export class KunaProjectCache {
       onStatus === undefined
         ? undefined
         : (status: KunaExportStatus) => onStatus(status);
-    if (listener !== undefined) entry.listeners.add(listener);
+    if (listener !== undefined) {
+      entry.listeners.add(listener);
+      if (entry.status !== undefined) listener(entry.status);
+    }
     return new Promise((resolve) => {
       let settled = false;
       const leave = () => {

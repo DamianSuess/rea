@@ -147,7 +147,7 @@ const procedureSelectorSchema = z.string().min(1);
  * One Kuna analysis session for one target.
  *
  * Reads come from the verified project export in REA's cache. Until that
- * export exists, listings use a quick `kuna functions` inventory and
+ * export exists, listings use the inventory the export takes first and
  * pseudocode a single-function `kuna decompile`, while the export builds in
  * the background; assembly waits for it. Kuna always runs on a private copy
  * whose digest matches the selected target.
@@ -173,6 +173,10 @@ export class KunaSessionClient implements AnalysisClient {
   #project: Promise<Result<KunaProject, AnalysisError>> | undefined;
   /** The cache lookup that decides #project, shared by concurrent first requests. */
   #starting: Promise<void> | undefined;
+  /** The building export's inventory; undefined when it settles without one. */
+  #exportInventory:
+    | Promise<readonly KunaInventoryFunction[] | undefined>
+    | undefined;
   #reader: KunaProjectReader | undefined;
   #inventoryIndex: InventoryIndex | undefined;
   #status: KunaExportStatus | undefined;
@@ -451,7 +455,7 @@ export class KunaSessionClient implements AnalysisClient {
     return {
       state: "building",
       phase: this.#status?.phase ?? null,
-      inventory_functions: this.#status?.inventoryFunctions ?? null,
+      inventory_functions: this.#status?.inventory?.length ?? null,
     };
   }
 
@@ -1172,6 +1176,12 @@ export class KunaSessionClient implements AnalysisClient {
       this.#project = Promise.resolve(ok(cached));
       return;
     }
+    let listed!: (
+      inventory: readonly KunaInventoryFunction[] | undefined,
+    ) => void;
+    this.#exportInventory = new Promise((resolve) => {
+      listed = resolve;
+    });
     this.#project = this.#cache
       .build({
         installation,
@@ -1180,9 +1190,11 @@ export class KunaSessionClient implements AnalysisClient {
         signal: this.#session.signal,
         onStatus: (status) => {
           this.#status = status;
+          if (status.inventory !== null) listed(status.inventory);
         },
       })
       .then((result) => {
+        listed(result.ok ? result.value.inventory : undefined);
         if (result.ok && !this.#closing) this.#adopt(result.value);
         else if (!result.ok && !this.#closing)
           this.#exportFailure =
@@ -1281,27 +1293,36 @@ export class KunaSessionClient implements AnalysisClient {
     }
   }
 
-  /** The export's inventory when ready, otherwise one quick `kuna functions` run. */
+  /** The published or building export's inventory, otherwise one `kuna functions` run. */
   async #ensureInventory(
     installation: KunaInstallation,
     options: ExecutionOptions,
   ): Promise<Result<readonly KunaInventoryFunction[], AnalysisError>> {
     if (this.#reader !== undefined) return ok(this.#reader.project.inventory);
+    const exported = this.#status?.inventory;
+    if (exported !== undefined && exported !== null) return ok(exported);
     if (this.#inventory === undefined) {
       // The session owns the shared run; each caller only stops waiting.
       const run = this.#listInventory(installation);
       this.#inventory = run;
       void run.then((listed) => {
-        // A failed quick listing is retried by the next request.
+        // A failed listing is retried by the next request.
         if (!listed.ok && this.#inventory === run) this.#inventory = undefined;
       });
     }
     return waitFor(this.#inventory, options.signal, "list_procedures");
   }
 
+  /**
+   * The export lists every callable entry before it decompiles, so listings
+   * wait for that inventory. Only an export that ends without one, or none at
+   * all, leads to a separate `kuna functions` run.
+   */
   async #listInventory(
     installation: KunaInstallation,
   ): Promise<Result<readonly KunaInventoryFunction[], AnalysisError>> {
+    const exported = await this.#exportInventory;
+    if (exported !== undefined) return ok(exported);
     const run = await this.#commands.run({
       installation,
       arguments: (input) => ["functions", input, "--json"],
