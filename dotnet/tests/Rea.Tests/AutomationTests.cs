@@ -95,7 +95,7 @@ internal static class AutomationTests
         yield return Case.Sync("Documentation rendering escapes executable HTML and unsafe link schemes", () =>
         {
             var rendered = DocumentationBuilder.Render("# Title\n<script>alert(1)</script>\n[x](javascript:evil)\n```\n<script>code</script>\n```\n[guide](guide.md)");
-            Check.True(rendered.Contains("<h1>Title</h1>", StringComparison.Ordinal));
+            Check.True(rendered.Contains("<h1 id=\"title\">Title</h1>", StringComparison.Ordinal));
             Check.True(!rendered.Contains("<script>", StringComparison.Ordinal));
             Check.True(!rendered.Contains("href=\"javascript:", StringComparison.Ordinal));
             Check.True(rendered.Contains("guide.html", StringComparison.Ordinal));

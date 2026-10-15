@@ -32,7 +32,8 @@ dotnet run --project dotnet/src/Rea.Cli --configuration Release --no-build -- in
 The dependency-free test executable runs the actual assertions; `dotnet test`
 is not this repository's verification command. Tests audit the checkout to reject
 foreign application/orchestration code and legacy manifests, and verify the
-approved bridge-source receipts.
+approved bridge-source receipts. See the [C# validation gates](scripts/README.md)
+for discovery, architecture, documentation, skill, cleanup and installed-package checks.
 
 ## Supported inspection
 
@@ -54,7 +55,7 @@ See [implementation details](dotnet/README.md) and [architecture](docs/architect
 
 The former MCP server, full command catalog, Evidence/session workflows, deep
 analysis providers, debugging/instrumentation, browser and Electron workflows,
-artifact extraction, active platform-specific adapters, setup/installers, the former website, and
+artifact extraction, active platform-specific adapters, provider setup, the former website runtime, and
 npm distribution are unavailable in this checkout. Managed members, signatures,
 IL, and native-boundary analysis also remain unavailable. They must be implemented
 and verified in C# before being advertised again. Engine-side JavaScript agents

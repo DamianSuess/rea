@@ -59,12 +59,13 @@ public static class DocumentationBuilder
     public static string Render(string markdown)
     {
         var result = new StringBuilder(); char? fence = null; var fenceLength = 0;
-        foreach (var line in markdown.Replace("\r\n", "\n", StringComparison.Ordinal).Split('\n'))
+        var headings = new Dictionary<string, int>(StringComparer.Ordinal);
+        foreach (var line in MarkdownFacts.Body(markdown).Split('\n'))
         {
             var opening = Regex.Match(line, @"^ {0,3}(`{3,}|~{3,})", RegexOptions.CultureInvariant, TimeSpan.FromSeconds(1));
             if (fence is not null)
             {
-                if (opening.Success && opening.Groups[1].Value[0] == fence && opening.Groups[1].Length >= fenceLength)
+                if (opening.Success && opening.Groups[1].Value[0] == fence && opening.Groups[1].Length >= fenceLength && line[opening.Length..].Trim().Length == 0)
                 { result.Append("</code></pre>"); fence = null; }
                 else result.Append(E(line)).Append('\n');
                 continue;
@@ -72,7 +73,7 @@ public static class DocumentationBuilder
             if (opening.Success) { result.Append("<pre><code>"); fence = opening.Groups[1].Value[0]; fenceLength = opening.Groups[1].Length; continue; }
             var heading = Regex.Match(line, @"^(#{1,6})\s+(.+)$", RegexOptions.CultureInvariant, TimeSpan.FromSeconds(1));
             if (heading.Success)
-            { var level = heading.Groups[1].Length; result.Append($"<h{level}>").Append(Inline(heading.Groups[2].Value)).Append($"</h{level}>"); }
+            { var level = heading.Groups[1].Length; result.Append($"<h{level} id=\"{E(MarkdownFacts.UniqueSlug(heading.Groups[2].Value, headings))}\">").Append(Inline(heading.Groups[2].Value)).Append($"</h{level}>"); }
             else if (line.Length > 0) result.Append("<p>").Append(Inline(line)).Append("</p>");
         }
         if (fence is not null) result.Append("</code></pre>");

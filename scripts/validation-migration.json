@@ -1,0 +1,22 @@
+{
+  "source_commit": "ef250b14442ad99458ef7ba1e59b78c809238675",
+  "language": "C# / .NET 10",
+  "mappings": [
+    { "original": "scripts/verify-test-discovery.mjs", "replacement": "dotnet/tests/Rea.Tests/TestDiscovery.cs", "scope": "Automatic C# suite discovery, source inventory, unique case names and nonempty suites" },
+    { "original": "scripts/verify-module-boundaries.mjs", "replacement": "scripts/ArchitectureChecks.cs", "scope": "Current C# project and compiled assembly dependencies" },
+    { "original": "scripts/check-doc-facts.mjs", "replacement": "scripts/DocumentationChecks.cs", "scope": "Current local links, heading fragments and required current command names; archived provider facts remain unverified" },
+    { "original": "scripts/verify-website.py", "replacement": "scripts/DocumentationChecks.cs", "scope": "C# documentation only; legacy website untouched and not qualified" },
+    { "original": "scripts/verify-repository-skill.mjs", "replacement": "dotnet/tests/Rea.Tests/ValidationTests.cs", "scope": "Copied portable skill bundles and exact owned guide content; no npm skill installer" },
+    { "original": "scripts/verify-test-temp-hygiene.mjs", "replacement": "scripts/ExecutionChecks.cs", "scope": "Real tests under isolated TEMP/TMP/TMPDIR; filesystem residues rejected" },
+    { "original": "scripts/verify-package-install.mjs", "replacement": "scripts/ExecutionChecks.cs", "scope": "Fresh local .NET tool install with isolated cache/feed" },
+    { "original": "scripts/verify-package-managed.mjs", "replacement": "scripts/ExecutionChecks.cs", "scope": "Installed inspect-managed-artifact and inspect-header; removed operations remain unavailable" },
+    { "original": "scripts/ci/pr-readiness.mjs", "replacement": "dotnet/tools/Rea.Automation/GitHubReadiness.cs", "scope": "Previously ported trusted default-branch readiness" },
+    { "original": "scripts/ci/qualification.mjs", "replacement": "dotnet/tools/Rea.Automation/PackageQualification.cs", "scope": "Previously ported source/digest qualification; publication unavailable" },
+    { "original": "scripts/ci/test-report.mjs", "replacement": "dotnet/tools/Rea.Automation/AutomationCommand.cs", "scope": "Previously ported missing/empty/failing report rejection" }
+  ],
+  "unavailable": [
+    "Live provider, browser, MCP/client and mutation verification for removed capabilities",
+    "Optional external network link audit; documentation gate is local-only",
+    "Original website runtime, npm package/update semantics and release publication/recovery"
+  ]
+}

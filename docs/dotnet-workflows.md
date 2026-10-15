@@ -20,6 +20,13 @@ no Node/npm dependency. The checked-in C# solution includes the automation and
 experiment tools. Generated files belong under `dotnet/artifacts/` or the ignored
 experiment `results/` folder, and are not source.
 
+The restored [C# scripts project](../scripts/README.md) adds complete suite
+discovery, architecture, current-documentation/skill references, isolated temporary
+cleanup and installed-package workflows. CI invokes it before artifact qualification.
+Archive-only references are reported as unavailable, not verified. The existing
+language policy is still enforced; restored website/native source is not exempted
+from it by these validation changes.
+
 ## GitHub workflows
 
 - `ci.yml` and `ci-full-pr.yml` invoke reusable `dotnet.yml` verification, including

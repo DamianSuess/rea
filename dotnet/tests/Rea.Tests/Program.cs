@@ -4,9 +4,9 @@ using Rea.Tests;
 string? reportPath = null;
 if (args.Length == 2 && args[0] == "--report") { reportPath = args[1]; args = []; }
 var selected = args.Length == 0
-    ? DomainTests.Cases().Concat(WorkflowTests.Cases()).Concat(ManagedTests.Cases()).Concat(RepositoryTests.Cases()).Concat(AutomationTests.Cases()).Concat(RestorationTests.Cases()).Concat(InstallerTests.Cases())
+    ? TestDiscovery.Discover()
     : args.Length == 2 && args[0] == "--verify-packages"
-        ? PackageTests.Cases(args[1])
+        ? TestDiscovery.Discover(args[1])
         : throw new ArgumentException("Usage: Rea.Tests [--verify-packages DIRECTORY]");
 var tests = selected.ToArray();
 if (tests.Length == 0) throw new InvalidOperationException("No tests discovered");

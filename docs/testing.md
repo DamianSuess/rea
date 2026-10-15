@@ -5,6 +5,12 @@ and execute `dotnet run --project dotnet/tests/Rea.Tests --configuration Release
 This is a dependency-free executable test harness; `dotnet test` does not run its
 assertions. Zero discovered cases or a failed assertion exits unsuccessfully.
 
+Test suites are discovered automatically and compared with the `*Tests.cs` source
+inventory. Missing/extra/duplicate suites, empty suites and duplicate case names
+fail before execution. Use the [C# scripts project](../scripts/README.md) for the
+repository, isolated cleanup and installed-package gates used by CI. It replaces
+the former JavaScript/Python validation entrypoints.
+
 Prefer real public CLI workflows, then provider-boundary integration, then module
 tests for distinct semantics. Preserve malformed-input, cancellation, permission,
 capacity, cleanup and identity coverage. The managed fixture is built from C#;

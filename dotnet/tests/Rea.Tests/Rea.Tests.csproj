@@ -3,6 +3,7 @@
     <OutputType>Exe</OutputType>
   </PropertyGroup>
   <ItemGroup>
+    <ProjectReference Include="../../../scripts/Rea.Validation.csproj" />
     <ProjectReference Include="../../tools/Rea.Installer/Rea.Installer.csproj" />
     <ProjectReference Include="../../tools/Rea.Automation/Rea.Automation.csproj" />
     <ProjectReference Include="../../src/Rea.Cli/Rea.Cli.csproj" />
