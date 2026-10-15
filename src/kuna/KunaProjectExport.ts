@@ -269,22 +269,44 @@ export const exportKunaProject = async (
     files[role] = { path: name, ...(await hashStableFile(path, signal)) };
   }
   const complete = files as KunaExportFiles;
-  const parsed = await readKunaExport(
+  const functions = await readKunaExportSource(
     request.output,
-    complete,
+    complete.c,
     summary,
     signal,
   );
-  if (!parsed.ok) return unusable(parsed.error);
+  if (!functions.ok) return unusable(functions.error);
   const identity = await verifyKunaExecutable(installation, signal);
   if (!identity.ok) return { kind: "done", result: identity };
+  // `functions.json` holds exactly the text this inventory was parsed from, so
+  // publishing reuses it rather than holding a second parsed copy.
   return {
     kind: "done",
-    result: ok({ files: complete, summary, ...parsed.value }),
+    result: ok({
+      files: complete,
+      summary,
+      functions: functions.value,
+      inventory: inventory.value,
+    }),
   };
 };
 
-/** Parse an export's function blocks and inventory from its own files. */
+/** Split an export's `.c` into its function blocks without buffering the file. */
+const readKunaExportSource = (
+  directory: string,
+  file: KunaExportFile,
+  summary: KunaExportSummary,
+  signal: AbortSignal | undefined,
+): Promise<Result<readonly KunaProjectFunction[], string>> =>
+  scanKunaProjectSource(
+    createReadStream(
+      join(directory, file.path),
+      signal === undefined ? {} : { signal },
+    ),
+    summary,
+  );
+
+/** Parse a published export's function blocks and inventory from its own files. */
 export const readKunaExport = async (
   directory: string,
   files: KunaExportFiles,
@@ -299,12 +321,11 @@ export const readKunaExport = async (
     string
   >
 > => {
-  const functions = await scanKunaProjectSource(
-    createReadStream(
-      join(directory, files.c.path),
-      signal === undefined ? {} : { signal },
-    ),
+  const functions = await readKunaExportSource(
+    directory,
+    files.c,
     summary,
+    signal,
   );
   if (!functions.ok) return functions;
   const inventory = parseKunaInventory(

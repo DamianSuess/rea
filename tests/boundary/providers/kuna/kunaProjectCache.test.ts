@@ -470,8 +470,9 @@ it("reports each build phase to every waiting request", async () => {
     ["decompiling", 3],
     ["sealing", 3],
   ]);
-  // Waiters receive the export's own parsed inventory.
-  expect(statuses.at(-1)?.inventory).toEqual(
+  // Waiters receive the export's own parsed inventory, and publishing keeps
+  // that one array rather than parsing a second copy.
+  expect(statuses.at(-1)?.inventory).toBe(
     result.ok ? result.value.inventory : undefined,
   );
 });
