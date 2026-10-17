@@ -1,6 +1,6 @@
 # REA-SHARP — C# / .NET 10
 
-_[Reverse Engineer Anything **SHARP**](https://github.com/DamianSuess/rea-sharp)_ is a complete rewrite of the original REA in C# to remove Node/NPM and JavaScript overhead, improving performance.
+_[Reverse Engineer Anything **SHARP**](https://github.com/DamianSuess/rea-sharp)_ is a complete rewrite of the original REA in C#, _removing dependency on Node/NPM and JavaScript overheads_, thus improving performance.
 
 Install from this checkout with the [C# installer](docs/csharp-installation.md).
 
