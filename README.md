@@ -1,10 +1,12 @@
 # REA-SHARP — C# / .NET 10
 
-_Reverse Engineer Anything **SHARP**_ is a complete rewrite of the original REA in C# to remove Node/NPM and JavaScript overhead, improving performance.
+_[Reverse Engineer Anything **SHARP**](https://github.com/DamianSuess/rea-sharp)_ is a complete rewrite of the original REA in C# to remove Node/NPM and JavaScript overhead, improving performance.
 
 Install from this checkout with the [C# installer](docs/csharp-installation.md).
 
-REA is a local, read-only executable and managed-assembly inspection tool.
+## Overview
+
+_[REA-SHARP](https://github.com/DamianSuess/rea-sharp)_ is a local, read-only executable and managed-assembly inspection tool.
 The application, automation, experiment runner, tests and fixtures use C#.
 Building the .NET solution requires only the .NET 10 SDK, with no Node/npm or
 TypeScript/JavaScript runtime. Restored engine-required Python, Java and Swift
@@ -98,3 +100,10 @@ PR checks, documentation generation, qualified packages and experiment commands.
 Original provider workflow filenames remain as manual availability gates, which
 fail explicitly instead of claiming verification. Release qualification produces
 source-bound .NET artifacts; publication remains gated.
+
+
+## References
+
+This project is a fork of [REA](https://github.com/morluto/rea) at commit `b3b5c8b`, converting all source code to C# from NodeJS/JavaScript.
+
+[REA-SHARP](https://github.com/DamianSuess/rea-sharp) uses `master` as its core branch instead of `main` to differientate between the two.
