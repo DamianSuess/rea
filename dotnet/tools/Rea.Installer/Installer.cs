@@ -11,8 +11,12 @@ public static class Installer
         string? staging = null;
         try
         {
-            var dryRun = false; var yes = false; string? package = null; string? destination = null;
+            var dryRun = false;
+            var yes = false;
+            string? package = null;
+            string? destination = null;
             var seen = new HashSet<string>(StringComparer.Ordinal);
+
             for (var i = 0; i < args.Length; i++)
             {
                 var option = args[i];
@@ -26,25 +30,51 @@ public static class Installer
                     case "--yes": yes = true; break;
                     case "--no-setup" or "--no-prompt": break;
                     case "--package" or "--tool-path":
-                        if (++i >= args.Length || args[i].StartsWith("--", StringComparison.Ordinal)) throw new ArgumentException("Missing value for " + option);
-                        if (option == "--package") package = Path.GetFullPath(args[i]); else destination = Path.GetFullPath(args[i]);
+                        if (++i >= args.Length || args[i].StartsWith("--", StringComparison.Ordinal))
+                            throw new ArgumentException("Missing value for " + option);
+
+                        if (option == "--package")
+                            package = Path.GetFullPath(args[i]);
+                        else
+                            destination = Path.GetFullPath(args[i]);
+
                         break;
-                    default: throw new ArgumentException("Unknown option: " + option + ". Use --help; registry --version installation is unavailable.");
+                    default:
+                        throw new ArgumentException("Unknown option: " + option + ". Use --help; registry --version installation is unavailable.");
                 }
             }
             var root = FindRoot();
             destination ??= Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".local", "share", "rea", "dotnet-tool");
+
             if (File.Exists(destination) || Directory.Exists(destination) && Directory.EnumerateFileSystemEntries(destination).Any())
                 throw new IOException("Installation directory must be empty or new. Existing installations are preserved; select another --tool-path.");
-            if (package is not null && !File.Exists(package)) throw new FileNotFoundException("Local package not found", package);
+
+            if (package is not null && !File.Exists(package))
+                throw new FileNotFoundException("Local package not found", package);
+
             await output.WriteLineAsync($"REA install plan\n  Source: {package ?? root + " (build and pack C# CLI)"}\n  Tool directory: {destination}\n  Runtime: .NET 10 (bring your own SDK/runtime)\n  Setup: unavailable; no provider or PATH configuration\n  Restore: local package feed only; no registry publication assumed");
-            if (dryRun) { await output.WriteLineAsync("Dry run complete; no installation changes made."); return 0; }
+
+            // Dry run, no install
+            if (dryRun)
+            {
+                await output.WriteLineAsync("Dry run complete; no installation changes made.");
+                return 0;
+            }
+
+            // Install
             if (!yes)
             {
-                if (args.Contains("--no-prompt", StringComparer.Ordinal)) throw new ArgumentException("Use --yes to approve the displayed plan noninteractively.");
+                if (args.Contains("--no-prompt", StringComparer.Ordinal))
+                    throw new ArgumentException("Use --yes to approve the displayed plan noninteractively.");
+
                 await output.WriteLineAsync("Install according to this plan? Type yes to continue:");
-                if (await input.ReadLineAsync() != "yes") { await output.WriteLineAsync("Installation cancelled; no installation changes made."); return 0; }
+                if (await input.ReadLineAsync() != "yes")
+                { 
+                    await output.WriteLineAsync("Installation cancelled; no installation changes made.");
+                    return 0;
+                }
             }
+
             staging = Path.Combine(root, "dotnet", "artifacts", "installer", Guid.NewGuid().ToString("N"));
             var feed = Path.Combine(staging, "feed"); Directory.CreateDirectory(feed);
             if (package is null)
@@ -69,10 +99,12 @@ public static class Installer
             Directory.Delete(staging, true); staging = null;
             return 0;
         }
-        catch (Exception ex) when (ex is ArgumentException or IOException or InvalidOperationException or System.ComponentModel.Win32Exception or System.Xml.XmlException or OperationCanceledException)
+        catch (Exception ex)
+        when (ex is ArgumentException or IOException or InvalidOperationException or System.ComponentModel.Win32Exception or System.Xml.XmlException or OperationCanceledException)
         {
             await error.WriteLineAsync("REA installation failed: " + ex.Message);
-            if (staging is not null) await error.WriteLineAsync("Retained installation diagnostics/packages: " + staging + ". Any partial tool installation is preserved; inspect it before retrying.");
+            if (staging is not null)
+                await error.WriteLineAsync("Retained installation diagnostics/packages: " + staging + ". Any partial tool installation is preserved; inspect it before retrying.");
             return 1;
         }
     }
@@ -80,18 +112,31 @@ public static class Installer
     private static string FindRoot()
     {
         var current = new DirectoryInfo(AppContext.BaseDirectory);
-        while (current is not null && !File.Exists(Path.Combine(current.FullName, "Rea.slnx"))) current = current.Parent;
+        while (current is not null && !File.Exists(Path.Combine(current.FullName, "Rea.slnx")))
+            current = current.Parent;
+
         return current?.FullName ?? throw new IOException("Run the installer from a REA source checkout.");
     }
 
     private static async Task Run(string command, string root, params string[] arguments)
     {
-        var start = new ProcessStartInfo(command) { WorkingDirectory = root, UseShellExecute = false, CreateNoWindow = true };
-        foreach (var argument in arguments) start.ArgumentList.Add(argument);
+        var start = new ProcessStartInfo(command)
+        {
+            WorkingDirectory = root,
+            UseShellExecute = false,
+            CreateNoWindow = true,
+        };
+
+        foreach (var argument in arguments)
+            start.ArgumentList.Add(argument);
+
         using var process = Process.Start(start) ?? throw new IOException("Cannot start " + command);
         using var deadline = new CancellationTokenSource(TimeSpan.FromMinutes(5));
+
         try { await process.WaitForExitAsync(deadline.Token); }
         finally { if (!process.HasExited) { process.Kill(true); await process.WaitForExitAsync(); } }
-        if (process.ExitCode != 0) throw new IOException(command + " exited with code " + process.ExitCode);
+
+        if (process.ExitCode != 0)
+            throw new IOException(command + " exited with code " + process.ExitCode);
     }
 }

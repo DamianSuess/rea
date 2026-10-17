@@ -1,4 +1,6 @@
-# REA — C# / .NET 10
+# REA-SHARP — C# / .NET 10
+
+_Reverse Engineer Anything **SHARP**_ is a complete rewrite of the original REA in C# to remove Node/NPM and JavaScript overhead, improving performance.
 
 Install from this checkout with the [C# installer](docs/csharp-installation.md).
 
@@ -27,6 +29,14 @@ dotnet run --project dotnet/tests/Rea.Tests --configuration Release --no-build
 dotnet run --project dotnet/src/Rea.Cli --configuration Release --no-build -- --help
 dotnet run --project dotnet/src/Rea.Cli --configuration Release --no-build -- inspect-header /path/to/binary
 dotnet run --project dotnet/src/Rea.Cli --configuration Release --no-build -- inspect-managed-artifact /path/to/assembly.dll
+```
+
+On Windows it will install to: `C:\Users\USERNAME\.local\share\rea\dotnet-tool\`
+
+Execute it via:
+
+```text
+C:\Users\USERNAME\.local\share\rea\dotnet-tool\rea.exe" --help
 ```
 
 The dependency-free test executable runs the actual assertions; `dotnet test`
